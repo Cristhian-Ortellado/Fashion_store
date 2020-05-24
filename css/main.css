@@ -19,6 +19,7 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    box-sizing: border-box;
 }
 
 
@@ -110,17 +111,43 @@ textarea {
    ========================================================================== */
 
 
-/********Globales*******/
+/***Costun properties***/
 
-body {
-    box-sizing: inherit;
-    background-color: #ffffff;
+:root {
+    --primario: #fafafa;
 }
 
-a {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
-    font-style: italic;
+
+/********Globales*******/
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primario);
+    box-sizing: inherit;
+}
+
+@media only screen and (min-width:768px) {
+    .contenedor {
+        width: 85%
+    }
+}
+
+@media only screen and (min-width:480px) {
+    .contenedor {
+        width: 95%
+    }
+}
+
+@media only screen and (min-width:992px) {
+    .contenedor {
+        width: 100%;
+        max-width: 1100px;
+    }
 }
 
 
@@ -129,7 +156,7 @@ a {
 header {
     display: block;
     text-align: center;
-    background-color: #faf2f2;
+    background-color: var(--primario);
 }
 
 nav.redes-sociales a i {
@@ -142,42 +169,62 @@ nav.redes-sociales a i {
 nav.redes-sociales a i:hover {
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
-    color: #ca5116;
 }
 
-div.barra-navegacion {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
+
+/***barra de navegacion***/
+
+div.enlaces {
     text-transform: uppercase;
-    background-color: #f1d1d1;
-    padding: 10px 0px;
+    display: none;
 }
 
-nav.navegacion a {
-    font-size: 0.8rem;
+@media only screen and (min-width:768px) {
+    div.enlaces {
+        padding: 10px 0;
+        margin-top: -10%;
+        margin-left: 1%;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+div.enlaces a {
+    font-size: 1rem;
     text-decoration: none;
     padding: 10px;
-    transition: all ease-in-out 0.5s;
-    margin-right: 25px;
+    transition: all ease-in-out 0.3s;
+    color: #000000;
+    margin: 0 25px;
+    font-family: 'Caveat', cursive;
+}
+
+div.enlaces a:hover {
     color: #000;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
 }
 
-nav.navegacion {
-    margin-top: 24px;
+@media only screen and (min-width:768px) {
+    div.enlaces span {
+        margin: 0 10%;
+    }
 }
 
-div.barra-navegacion nav a:hover {
-    color: palevioletred;
-    border-bottom: 2px solid #222;
+@media only screen and (min-width:992px) {
+    div.enlaces span {
+        margin: 0 12%;
+    }
+    div.enlaces {
+        margin-left: 1.46%;
+    }
 }
 
-div.barra-navegacion img {
-    width: 90px;
-    border-radius: 2.3em;
-    margin-right: 20px;
+div.logo {
+    margin: 0 auto;
+    text-align: center;
 }
 
 
