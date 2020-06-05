@@ -192,13 +192,17 @@ div.enlaces {
 }
 
 div.enlaces a {
-    font-size: 1rem;
+    font-size: .93rem;
     text-decoration: none;
     padding: 10px;
     transition: all ease-in-out 0.3s;
-    color: #000000;
+    color: #242424;
     margin: 0 25px;
-    font-family: 'Caveat', cursive;
+    font-weight: 400;
+    line-height: 13px;
+    white-space: nowrap;
+    font-family: 'Gillsans', sans-serif;
+    letter-spacing: .1em;
 }
 
 div.enlaces a:hover {
