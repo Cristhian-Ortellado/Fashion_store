@@ -253,7 +253,7 @@ div.logo {
 .contenedor h2{
 	text-align: center;
 	font-family: var(--fuentePrimaria);
-	font-weight: 200;
+	font-weight: 100;
 	font-size: 1.9rem;
 	letter-spacing: 2px;
 	margin-bottom: 30px;
@@ -267,8 +267,6 @@ div.card{
 	margin: 5px 5px 15px 5px;
 	border-radius: 1rem;
 	background-color: white;
-}
-div.card{
 	display: inline-flex;
 	align-items: center;
 	flex-direction: column;
@@ -278,6 +276,25 @@ div.card{
 	color: #333333;
 	padding-bottom: 1.3rem;
 	
+}
+section.card-productos{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: nowrap;
+	
+}
+div.card-opciones{
+	display:flex;
+	align-items: center;
+	flex-direction: column;
+}
+div.card-opciones a,div.card-opciones span {
+	color: #9e9e9e;	
+}
+div.card p{
+	font-family: var(--fuentePrimaria);	
+	font-size: 1.1em;
 }
 @media only screen and (min-width: 768px){
 	div.card{
@@ -301,20 +318,7 @@ div.card{
 	}
 }
 
-div.card-opciones{
-	display:flex;
-	align-items: center;
-	flex-direction: column;
-}
-div.card-opciones a{
-	color: #9e9e9e;
-	
-}
-div.card p{
-	font-family: var(--fuentePrimaria);	
-	font-size: 1.1em;
-	margin-bottom: 5px;
-}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
