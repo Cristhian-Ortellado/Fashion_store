@@ -276,7 +276,7 @@ div.logo {
 
 div.card {
     border-bottom: 1px solid black;
-    margin: 5px 5px 15px 5px;
+    margin: 10px 0;
     border-radius: 1rem;
     background-color: var(--primario);
     display: inline-flex;
@@ -287,13 +287,14 @@ div.card {
     box-shadow: -2px 0px 3px 0px rgba(0, 0, 0, 0.67); */
     color: #333333;
     padding-bottom: 1.3rem;
+    width: 50%;
 }
 
 section.card-productos {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 div.card-opciones {
@@ -319,10 +320,14 @@ div.card p {
         border-right: 1px solid #e3e4e4;
         margin: 0;
     }
+    div.card:last-child {
+        border-right: none;
+    }
     .card img {
         max-width: 19em;
         width: 100%;
         height: auto;
+        max-height: 348px;
         margin: 5px;
         border-radius: 0;
     }
