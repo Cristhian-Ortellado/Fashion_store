@@ -293,18 +293,6 @@ textarea {
     page-break-after: avoid;
   }
 }
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
 
 
 
@@ -314,12 +302,7 @@ About
 
 
 /*  codigo jose*/
-:root {
-    --primario: #ffc107;
-    --oscuro: #212121;
-    --secundario: #0097a7;
-    --fondo: #111c36;
-}
+
 
 html {
     box-sizing: border-box;
@@ -362,7 +345,7 @@ img {
 
 .contenedor-hero i {
     font-size: 5rem;
-    color: var(--fondo)
+    color: #111c36;
 }
 .contenedor-hero p {
     margin-bottom: 0;
@@ -386,7 +369,7 @@ img {
 .redes p {
 
     text-align: center;
-    font-size: 2.7rem;
+    font-size: 2.5rem;
 }
 
 
@@ -406,8 +389,8 @@ img {
          width: 7.5rem;
         height: 7.5rem;
         border-radius: 50%;
-        background-color: var(--fondo);
-      
+        background-color:#111c36;
+       
         /* margin-top: 2rem; */
         color:white;
         font-size: 5rem;
