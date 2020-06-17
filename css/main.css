@@ -146,7 +146,7 @@ body {
 
 @media only screen and (min-width:992px) {
     .contenedor {
-        width: 100%;
+        width: 100%!important;
     }
 }
 
@@ -259,14 +259,84 @@ div.logo {
     text-align: center;
 }
 
+div.imagen {
+    background-color: #c887e5;
+}
 
-/******contenido ropas home***/
+div.imagen img {
+    /* border: 1px solid #c887e5; */
+}
+
+
+/******HOME*******/
+
+
+/* contenedor-venta */
+
+div.oferta-venta {
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 2rem 0 0 0;
+    background-color: white;
+    transition: all ease-in-out .2s;
+}
+
+div.oferta-venta:hover {
+    transform: scale(1.01);
+}
+
+div.oferta-venta div a {
+    font-family: var(--fuentePrimaria);
+    color: var(--primario);
+    font-weight: 900;
+}
+
+div.oferta-venta div {
+    background-color: #c887e5;
+    padding: 7px 0;
+}
+
+div.oferta-venta h2 {
+    font-weight: 100;
+}
+
+div.oferta-venta img {
+    width: 90%;
+    height: auto;
+    border-radius: 3px;
+}
+
+@media only screen and (min-width:768px) {
+    div.oferta-venta img {
+        width: 220px;
+        height: 200px;
+    }
+    div.contenedor-venta {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    div.oferta-venta {
+        width: 33.3%;
+        background-color: white;
+    }
+    div.oferta-venta div {
+        width: 100%;
+        background-color: #c887e5;
+        padding: 7px 0;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    div.oferta-venta img {
+        width: auto;
+        height: 280px;
+    }
+}
 
 
 /**card**/
-
-
-/*generales  mobile*/
 
 .contenedor h2 {
     text-align: center;
@@ -284,7 +354,7 @@ div.logo {
 }
 
 div.card {
-    margin: 15px 0;
+    margin: 0 0 15px 0;
     background-color: var(--primario);
     display: inline-flex;
     align-items: center;
@@ -294,7 +364,7 @@ div.card {
     width: 50%;
     border-bottom: 1px solid #9e9e9e;
     border-right: 1px solid #9e9e9e;
-    transition: all ease-in-out .2s;
+    transition: transform ease-in-out .2s;
 }
 
 section.card-productos {
@@ -302,6 +372,7 @@ section.card-productos {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    border-top: 1px solid #ccc;
 }
 
 div.card-opciones {
@@ -323,7 +394,8 @@ div.card p {
 }
 
 div.card:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-1.5rem);
+    border-top: 1px solid #e3e4e4;
 }
 
 @media only screen and (min-width: 768px) {
@@ -331,9 +403,8 @@ div.card:hover {
         width: 214.98px;
     }
     div.card {
-        border-radius: none;
         border: none;
-        border-bottom: 1px solid #e3e4e4;
+        /* border-top: 1px solid #e3e4e4; */
         border-right: 1px solid #e3e4e4;
         width: 33.3%;
         padding: 0 5px 1rem 5px;
@@ -349,6 +420,7 @@ div.card:hover {
     section.card-productos {
         flex-direction: row;
         justify-content: space-around;
+        /* border-top: 1px solid #e3e4e4; */
     }
 }
 
@@ -362,12 +434,12 @@ div.card:hover {
     }
     div.card {
         width: auto;
-        padding: 0 15px;
+        padding: 50px 15px;
     }
     .card img {
         /* padding: 0 15px 1rem 15px; */
         width: 253.89px;
-        height: 380px;
+        height: 380.83px;
     }
     section.hombres div.card {
         width: 33.3%;
