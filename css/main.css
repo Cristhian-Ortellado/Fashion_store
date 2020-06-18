@@ -116,6 +116,21 @@ textarea {
 :root {
     --primario: #fafafa;
     --fuentePrimaria: 'Poppins', sans-serif;
+    --titulos: 'iconic', sans-serif;
+    --subTitulos: 'Oswald', sans-serif;
+}
+
+
+/****fuentes***/
+
+@font-face {
+    font-family: "thinoo";
+    src: url("../webfonts/thinoobold.otf");
+}
+
+@font-face {
+    font-family: "iconic";
+    src: url("../webfonts/Iconic-Regular-trial.ttf");
 }
 
 
@@ -161,11 +176,16 @@ a {
 
 h1 {
     text-align: center;
-    font-family: var(--fuentePrimaria);
+    font-family: var(--titulos);
     text-transform: uppercase;
     padding: 1em 0;
     letter-spacing: .2em;
     margin: 0;
+    font-weight: 100;
+}
+
+h2 {
+    font-family: var(--subTitulos);
 }
 
 @media only screen and (max-width:375px) {
@@ -199,18 +219,79 @@ nav.redes-sociales a i:hover {
 }
 
 
-/***barra de navegacion***/
+/************barra de navegacion*************/
+
+
+/**logo**/
+
+div.logo a {
+    text-align: center;
+}
+
+div.logo {
+    margin-top: 0;
+}
+
+div.logo a p {
+    margin-top: 0;
+    font-size: small;
+    font-family: 'Cinzel', serif;
+    /* text-transform: uppercase; */
+    font-weight: 400;
+    color: black;
+    margin-bottom: 20px;
+}
+
+div.logo a h2 {
+    color: #c887e5;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+div.header-barra {
+    /* background-color: pink; */
+}
+
+@media only screen and (max-width:375px) {
+    nav.menu-movil {
+        width: 60px;
+        margin: 1.6em .8em 0 1em;
+    }
+    nav.menu-movil span {
+        height: 6px;
+        display: block;
+        background-color: black;
+        padding-top: 3px;
+        border-radius: 1rem;
+        margin-bottom: 4px;
+    }
+    nav.navegacion {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    div.logo {
+        margin-top: 2rem;
+        display: block;
+    }
+}
 
 div.enlaces {
     text-transform: uppercase;
     display: none;
+    font-family: 'Oswald', sans-serif;
 }
 
 @media only screen and (min-width:768px) {
     div.enlaces {
-        padding: 10px 0;
-        margin-top: -10%;
-        margin-left: 1%;
+        /* padding: 10px 0; */
+        margin-top: -15px;
         display: inline-flex;
         flex-direction: row;
         justify-content: space-evenly;
@@ -219,22 +300,21 @@ div.enlaces {
 }
 
 div.enlaces a {
-    font-size: .93rem;
+    font-size: 1rem;
     text-decoration: none;
     padding: 10px;
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.2s;
     color: #242424;
     margin: 0 25px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 13px;
-    white-space: nowrap;
-    font-family: 'Gillsans', sans-serif;
-    letter-spacing: .1em;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
 }
 
 div.enlaces a:hover {
     color: #000;
-    transform: scale(1.2);
+    transform: scale(1.01);
     -webkit-transform: scale(1.1);
 }
 
@@ -253,21 +333,14 @@ div.enlaces a:hover {
     }
 }
 
-div.logo {
-    margin: 0 auto;
-    text-align: center;
-}
-
-div.imagen {
-    background-color: #c887e5;
-}
-
-div.imagen img {
-    /* border: 1px solid #c887e5; */
-}
-
 
 /******HOME*******/
+
+
+/* body.home h1 {
+    text-align: left;
+    margin-left: 5rem;
+} */
 
 
 /* contenedor-venta */
@@ -299,8 +372,8 @@ div.oferta-venta div {
 }
 
 div.oferta-venta p {
-    font-weight: 400;
-    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
     margin: 10px 0;
     font-size: 1.5em;
     letter-spacing: 2px;
@@ -345,8 +418,8 @@ div.oferta-venta img {
 
 .contenedor h2 {
     text-align: center;
-    font-family: var(--fuentePrimaria);
-    font-weight: 100;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
     font-size: 1.9rem;
     letter-spacing: 2px;
     margin-bottom: 30px;
