@@ -180,7 +180,6 @@ h1 {
 header {
     display: block;
     text-align: center;
-    background-color: var(--primario);
 }
 
 div.header-barra {
@@ -190,7 +189,7 @@ div.header-barra {
 nav.redes-sociales a i {
     font-size: 2.5em;
     padding: 0.5%;
-    color: black;
+    color: #242424;
     transition: all ease-in-out 0.3s;
 }
 
@@ -214,7 +213,7 @@ div.enlaces {
         margin-left: 1%;
         display: inline-flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
         width: 100%;
     }
 }
@@ -274,12 +273,14 @@ div.imagen img {
 /* contenedor-venta */
 
 div.oferta-venta {
-    margin: 10px auto;
+    margin: 20px auto;
     text-align: center;
     border: 1px solid #ccc;
-    padding: 2rem 0 0 0;
+    padding: 0 0 0px 0;
     background-color: white;
     transition: all ease-in-out .2s;
+    width: 90%;
+    height: 500px;
 }
 
 div.oferta-venta:hover {
@@ -287,51 +288,55 @@ div.oferta-venta:hover {
 }
 
 div.oferta-venta div a {
-    font-family: var(--fuentePrimaria);
-    color: var(--primario);
-    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+    color: #c887e5;
+    font-weight: bolder;
 }
 
 div.oferta-venta div {
-    background-color: #c887e5;
-    padding: 7px 0;
+    padding: 0px 0;
+    margin-bottom: 20px;
 }
 
-div.oferta-venta h2 {
-    font-weight: 100;
+div.oferta-venta p {
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px 0;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 div.oferta-venta img {
-    width: 90%;
-    height: auto;
-    border-radius: 3px;
+    width: 100%;
+    height: 384px;
 }
 
 @media only screen and (min-width:768px) {
     div.oferta-venta img {
-        width: 220px;
-        height: 200px;
+        width: 100%;
+        height: 280px;
     }
     div.contenedor-venta {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
     }
     div.oferta-venta {
-        width: 33.3%;
         background-color: white;
+        height: auto;
     }
     div.oferta-venta div {
         width: 100%;
-        background-color: #c887e5;
         padding: 7px 0;
     }
 }
 
 @media only screen and (min-width:992px) {
     div.oferta-venta img {
-        width: auto;
-        height: 280px;
+        width: 100%;
+        height: 450px;
+        border-bottom: 1px solid #E1DEDE;
     }
 }
 
