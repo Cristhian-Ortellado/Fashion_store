@@ -161,12 +161,13 @@ body {
 
 @media only screen and (min-width:992px) {
     .contenedor {
-        width: 100%!important;
+        width: 100%;
     }
 }
 
 .contenedor {
     margin: 0 auto;
+    /* width: 95%; */
 }
 
 a {
@@ -188,10 +189,19 @@ h2 {
     font-family: var(--subTitulos);
 }
 
-@media only screen and (max-width:375px) {
-    h1 {
-        letter-spacing: normal;
-    }
+h1 {
+    letter-spacing: normal;
+    margin: 0 auto;
+    width: 90%;
+    text-align: justify;
+    padding: .8em 0 .1em 0;
+}
+
+h2 {
+    margin: 0 auto;
+    width: 90%;
+    text-align: justify;
+    padding: .8em 0 .1em 0;
 }
 
 
@@ -229,50 +239,77 @@ div.logo a {
 }
 
 div.logo {
-    margin-top: 0;
+    margin-top: 0px;
+    z-index: 1;
 }
 
-div.logo a p {
+div.logo a div p {
     margin-top: 0;
-    font-size: small;
+    font-size: .7em;
     font-family: 'Cinzel', serif;
     /* text-transform: uppercase; */
     font-weight: 400;
-    color: black;
-    margin-bottom: 20px;
+    color: #c887e5;
+    margin-bottom: 8px;
 }
 
 div.logo a h2 {
     color: #c887e5;
     font-family: 'Cinzel', serif;
-    font-size: 3rem;
+    font-size: 1.8rem;
     font-weight: 500;
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 10px;
+}
+
+div.logo a div {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+div.logo div img {
+    width: 64px;
+    height: 14px;
+    margin: 0px 2px 0 2px;
+}
+
+span.icono-mobile {
+    margin: 15px 0 0 25px;
+}
+
+span.icono-mobile i {
+    font-size: 1.5rem;
+    color: #333333;
 }
 
 div.header-barra {
-    /* background-color: pink; */
+    -webkit-box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
+    -moz-box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
+    box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
+    margin-top: 0;
+    width: 100%;
 }
 
-@media only screen and (max-width:375px) {
-    nav.menu-movil {
-        width: 60px;
-        margin: 1.6em .8em 0 1em;
-    }
-    nav.menu-movil span {
-        height: 6px;
-        display: block;
-        background-color: black;
-        padding-top: 3px;
-        border-radius: 1rem;
-        margin-bottom: 4px;
-    }
-    nav.navegacion {
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+nav.menu-movil {
+    width: 60px;
+    margin: 17px 10px 0 1em;
+}
+
+nav.menu-movil span {
+    width: 40px;
+    height: 6px;
+    display: block;
+    background-color: #333333;
+    border-radius: 1rem;
+    margin-bottom: 2px;
+}
+
+nav.navegacion {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 @media only screen and (min-width:768px) {
@@ -308,12 +345,13 @@ div.enlaces a {
     margin: 0 25px;
     font-weight: 500;
     line-height: 13px;
+    text-decoration-color: #ccc;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
 }
 
 div.enlaces a:hover {
-    color: #000;
+    text-decoration: underline #ccc;
     transform: scale(1.01);
     -webkit-transform: scale(1.1);
 }
