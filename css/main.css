@@ -139,12 +139,17 @@ textarea {
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-    background-color: var(--primario);
-    box-sizing: inherit;
+	background-color: var(--primario);
+	box-sizing: inherit;
+}
+
+.contenedor {
+    margin: 0 auto;
+    width: 95%;
 }
 
 @media only screen and (min-width:768px) {
@@ -165,11 +170,6 @@ body {
     }
 }
 
-.contenedor {
-    margin: 0 auto;
-    /* width: 95%; */
-}
-
 a {
     text-decoration: none;
     color: black;
@@ -188,21 +188,16 @@ h1 {
 h2 {
     font-family: var(--subTitulos);
 }
-
-h1 {
-    letter-spacing: normal;
-    margin: 0 auto;
-    width: 90%;
-    text-align: justify;
-    padding: .8em 0 .1em 0;
+@media only screen and (max-width:767px){
+	h1 {
+	    letter-spacing: normal;
+	    margin: 0 auto;
+	    width: 90%;
+	    text-align: justify;
+	    padding: .8em 0 .1em 0;
+	}
 }
 
-h2 {
-    margin: 0 auto;
-    width: 90%;
-    text-align: justify;
-    padding: .8em 0 .1em 0;
-}
 
 
 /******header*****/
@@ -238,16 +233,11 @@ div.logo a {
     text-align: center;
 }
 
-div.logo {
-    margin-top: 0px;
-    z-index: 1;
-}
 
 div.logo a div p {
     margin-top: 0;
     font-size: .7em;
     font-family: 'Cinzel', serif;
-    /* text-transform: uppercase; */
     font-weight: 400;
     color: #c887e5;
     margin-bottom: 8px;
@@ -256,7 +246,7 @@ div.logo a div p {
 div.logo a h2 {
     color: #c887e5;
     font-family: 'Cinzel', serif;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     font-weight: 500;
     margin-bottom: 0;
     margin-top: 10px;
@@ -267,6 +257,7 @@ div.logo a div {
     flex-direction: row;
     justify-content: center;
     width: 100%;
+
 }
 
 div.logo div img {
@@ -276,7 +267,7 @@ div.logo div img {
 }
 
 span.icono-mobile {
-    margin: 15px 0 0 25px;
+    margin: -1em 0 0 25px;
 }
 
 span.icono-mobile i {
@@ -294,7 +285,7 @@ div.header-barra {
 
 nav.menu-movil {
     width: 60px;
-    margin: 17px 10px 0 1em;
+    margin: -1em 10px 0 1em;
 }
 
 nav.menu-movil span {
@@ -309,46 +300,68 @@ nav.menu-movil span {
 nav.navegacion {
     display: inline-flex;
     flex-direction: row;
-    justify-content: space-evenly;
+   align-items: center;
 }
-
-@media only screen and (min-width:768px) {
-    div.logo {
-        margin-top: 2rem;
-        display: block;
-    }
-}
-
 div.enlaces {
-    text-transform: uppercase;
-    display: none;
-    font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	display: none;
+	font-family: 'Oswald', sans-serif;
 }
 
+
 @media only screen and (min-width:768px) {
+    
+    div.logo a h2{
+	    font-size: 2rem;
+    }
+    span.icono-mobile, nav.menu-movil {
+	    display: none;
+    }
+    
+	nav.navegacion {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	div.logo {
+        margin: 1rem auto;
+	  display: block;
+	  align-self: stretch;
+    }
     div.enlaces {
-        /* padding: 10px 0; */
         margin-top: -15px;
         display: inline-flex;
         flex-direction: row;
-        justify-content: space-evenly;
+	  justify-content: space-around;
         width: 100%;
+    }
+
+    div.enlaces a {
+	  font-size: .8rem;
+	  text-decoration: none;
+	  padding: 10px;
+	  transition: all ease-in-out 0.2s;
+	  color: #242424;
+	  margin: 0 25px;
+	  font-weight: 500;
+	  line-height: 13px;
+	  text-decoration-color: #ccc;
+	  font-family: 'Oswald', sans-serif;
+	  letter-spacing: 2px;
+    }
+}
+@media only screen and (min-width:992px){
+	div.enlaces a {
+	  font-size: .9rem;
+	  text-decoration-color: #ccc;
+	  font-family: 'Oswald', sans-serif;
+	  letter-spacing: 2px;
+    }
+    div.logo a h2{
+	    font-size: 2.5rem;
     }
 }
 
-div.enlaces a {
-    font-size: 1rem;
-    text-decoration: none;
-    padding: 10px;
-    transition: all ease-in-out 0.2s;
-    color: #242424;
-    margin: 0 25px;
-    font-weight: 500;
-    line-height: 13px;
-    text-decoration-color: #ccc;
-    font-family: 'Oswald', sans-serif;
-    letter-spacing: 2px;
-}
 
 div.enlaces a:hover {
     text-decoration: underline #ccc;
@@ -358,14 +371,12 @@ div.enlaces a:hover {
 
 @media only screen and (min-width:768px) {
     div.enlaces span {
-        margin: 0 10%;
+        margin: 0 5%;
     }
 }
 
 @media only screen and (min-width:992px) {
-    div.enlaces span {
-        margin: 0 12%;
-    }
+    
     div.enlaces {
         margin-left: 1.46%;
     }
@@ -375,10 +386,6 @@ div.enlaces a:hover {
 /******HOME*******/
 
 
-/* body.home h1 {
-    text-align: left;
-    margin-left: 5rem;
-} */
 
 
 /* contenedor-venta */
