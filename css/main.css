@@ -192,13 +192,18 @@ h2 {
 @media only screen and (max-width:767px) {
     h1 {
         letter-spacing: normal;
-        margin: 0 auto 0 .9em;
-        width: 85%;
+        /* margin: 0 auto 0 .5em; */
+        /* width: 85%; */
         text-align: justify;
         padding: .8em 0 .1em 0;
         color: black;
         opacity: .5;
     }
+}
+
+div.titulo {
+    width: 90%;
+    margin: 0 auto;
 }
 
 
@@ -234,6 +239,7 @@ nav.redes-sociales a i:hover {
 div.logo a {
     text-align: center;
     color: #A986FA;
+    /* text-shadow: 3px 4px 5px rgba(104, 104, 104, 0.5); */
 }
 
 div.logo a div p {
@@ -428,6 +434,7 @@ div.oferta-venta p {
     background-color: #fafafa;
     position: relative;
     width: 60%;
+    color: gray;
     padding: 5px 10px;
     bottom: .8em;
     margin: 0 auto;
@@ -455,7 +462,6 @@ div.oferta-venta img {
         justify-content: space-around;
     }
     div.oferta-venta {
-        background-color: white;
         height: auto;
     }
     div.oferta-venta div {
@@ -475,33 +481,57 @@ div.oferta-venta img {
 
 /**card**/
 
-.contenedor h2 {
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 500;
-    font-size: 1.9rem;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+.contenido {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div.subtitulo {
+    width: 90%;
+    margin: 0 auto;
+}
+
+div.subtitulo h2 {
+    text-align: justify;
+    color: black;
+    opacity: .5;
+    font-size: 1.5rem;
 }
 
 .card img {
     /*Especificamos el tamaño de la imagen para cada pantalla*/
-    width: 141.5px;
-    height: 212.25px;
+    /* width: 141.5px;
+    height: 212.25px; */
+    /* height: 212.25px; */
+    width: 88.3%;
+    height: 69.5%;
+    margin-top: 8px;
 }
 
 div.card {
-    margin: 0 0 15px 0;
+    margin: 0 0 20px 0;
     background-color: var(--primario);
     display: inline-flex;
     align-items: center;
     flex-direction: column;
-    color: #333333;
-    padding-bottom: .9em;
-    width: 50%;
-    border-bottom: 1px solid #9e9e9e;
-    border-right: 1px solid #9e9e9e;
+    color: gray;
+    padding-bottom: 1.5em;
+    width: 48%;
+    border: none;
+    /* border-bottom: 1px solid #9e9e9e; */
+    /* border-right: 1px solid #9e9e9e;
+    border-left: 1px solid #9e9e9e; */
     transition: transform ease-in-out .2s;
+    -webkit-box-shadow: 0px 3px 9px -5px rgba(0, 0, 0, 0.69);
+    -moz-box-shadow: 0px 3px 9px -5px rgba(0, 0, 0, 0.69);
+    box-shadow: 0px 3px 9px -5px rgba(0, 0, 0, 0.69);
+}
+
+@media only screen and (max-width:767px) {
+    div.card {
+        margin: 15px 2px;
+    }
 }
 
 section.card-productos {
@@ -509,7 +539,7 @@ section.card-productos {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
 }
 
 div.card-opciones {
@@ -520,14 +550,27 @@ div.card-opciones {
 
 div.card-opciones a,
 div.card-opciones span {
-    color: #9e9e9e;
+    color: black;
+    opacity: .4;
+    font-size: .9em;
+}
+
+div.card-opciones a {
+    color: black;
+    opacity: .7;
+    /* border-bottom: 1px solid black; */
+    /* border: 1px solid rgba(0, 0, 0, 0.7); */
+    padding: 2px 15px;
 }
 
 div.card p {
     font-family: var(--fuentePrimaria);
-    font-size: 1em;
-    width: 141.5px;
+    font-size: .9em;
+    width: 90%;
     text-align: center;
+    margin-top: 2px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 div.card:hover {
@@ -590,25 +633,6 @@ div.card:hover {
 
 
 /*boton ver detalles*/
-
-div.card-detalles input {
-    border: 1px solid #333333;
-    color: #333333;
-    margin-top: .5rem;
-    font-family: var(--fuentePrimaria);
-    background-color: transparent;
-    font-size: .9em;
-    padding: 0.6em 3em;
-    transition: all ease-in-out .2s;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-div.card-detalles input:hover {
-    background-color: #c887e5;
-    border: 1px solid #c887e5;
-    color: white;
-}
 
 
 /* ==========================================================================
