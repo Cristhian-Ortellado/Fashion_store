@@ -295,6 +295,267 @@ textarea {
 }
 
 
+/*  codigo cristhian
+/********Globales*******/
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--primario);
+    box-sizing: inherit;
+}
+
+.contenedor {
+    margin: 0 auto;
+    width: 95%;
+    background-color: white;
+}
+
+@media only screen and (min-width:768px) {
+    .contenedor {
+        width: 85%
+    }
+}
+
+@media only screen and (min-width:480px) {
+    .contenedor {
+        width: 95%
+    }
+}
+
+@media only screen and (min-width:992px) {
+    .contenedor {
+        width: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    font-family: var(--titulos);
+    text-transform: uppercase;
+    padding: 1em 0;
+    letter-spacing: .2em;
+    margin: 0;
+    font-weight: 100;
+}
+
+h2 {
+    font-family: var(--subTitulos);
+}
+
+@media only screen and (max-width:767px) {
+    h1 {
+        letter-spacing: normal;
+        /* margin: 0 auto 0 .5em; */
+        /* width: 85%; */
+        text-align: justify;
+        padding: .8em 0 .1em 0;
+        color: black;
+        opacity: .5;
+    }
+}
+
+div.titulo {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+/******header*****/
+
+header {
+    display: block;
+    text-align: center;
+}
+
+div.barra-navegacion {
+    margin: 0 auto;
+}
+
+nav.redes-sociales a i {
+    font-size: 2.5em;
+    padding: 0.5%;
+    color: #242424;
+    transition: all ease-in-out 0.3s;
+}
+
+nav.redes-sociales a i:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+}
+
+
+/************barra de navegacion*************/
+
+
+/**logo**/
+
+div.logo a {
+    text-align: center;
+    color: #A986FA;
+    /* text-shadow: 3px 4px 5px rgba(104, 104, 104, 0.5); */
+}
+
+div.logo a div p {
+    margin-top: 0;
+    font-size: .7em;
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-family: 'Cinzel', serif;
+}
+
+div.logo a h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+
+div.logo a div {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+div.logo div img {
+    width: 64px;
+    height: 14px;
+    margin: 0px 2px 0 2px;
+}
+
+span.icono-mobile {
+    margin: -1em 0 0 25px;
+}
+
+span.icono-mobile i {
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+div.barra-navegacion {
+    -webkit-box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
+    -moz-box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
+    box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
+    margin-top: 0;
+    width: 100%;
+}
+
+nav.menu-movil {
+    width: 2.5em;
+    position: absolute;
+    top: 2em;
+    left: .8em;
+}
+
+nav.menu-movil span {
+    width: 2.5em;
+    height: .4em;
+    display: block;
+    background-color: #333333;
+    border-radius: 1rem;
+    margin-bottom: 2px;
+    opacity: .5;
+}
+
+div.logo {
+    padding-top: 1em;
+}
+
+div.enlaces {
+    text-transform: uppercase;
+    display: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+@media only screen and (min-width:768px) {
+    div.logo a h2 {
+        font-size: 2rem;
+    }
+    h1 {
+        /* width: 80%; */
+        margin-left: 1rem;
+        text-align: justify;
+        opacity: .5;
+    }
+    span.icono-mobile,
+    nav.menu-movil {
+        display: none;
+    }
+    nav.navegacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    div.logo {
+        margin: 1rem auto;
+        display: block;
+        align-self: stretch;
+    }
+    div.enlaces {
+        margin-top: -15px;
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+    div.enlaces a {
+        font-size: .8rem;
+        text-decoration: none;
+        padding: 10px;
+        transition: all ease-in-out 0.2s;
+        color: #242424;
+        margin: 0 25px;
+        font-weight: 500;
+        line-height: 13px;
+        text-decoration-color: #ccc;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 2px;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    div.enlaces a {
+        font-size: .9rem;
+        text-decoration-color: #ccc;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 2px;
+    }
+    div.logo a h2 {
+        font-size: 2.5rem;
+    }
+}
+
+div.enlaces a:hover {
+    text-decoration: underline #ccc;
+    transform: scale(1.01);
+    -webkit-transform: scale(1.1);
+}
+
+@media only screen and (min-width:768px) {
+    div.enlaces span {
+        margin: 0 5%;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    div.enlaces {
+        margin-left: 1.46%;
+    }
+}
+
+
 
 
 
@@ -315,134 +576,118 @@ html {
 
 
 body{
-    background-color: #fafafa;
+    background-color: #e1e1e1;
 }
 
+
+
 /* Globales*/
-img {
-    max-width: 95%;
-}
-.contenedor {
-    width: 95%;
-    max-width: 120rem;
-    margin: 0 auto;
-    color: white;
-}
+
 
 .centrar-texto{
     text-align: center;
 }
 
 /**  Contacto amigoooo! */
-.contenedor-hero {
-    color: black;
-    /* position: relative; */
-    /* z-index:1; */
-    text-align: center;
-    font-size:1.8rem;
-    /* margin-bottom: 4rem; */
+
+/* bueno ahora me di cuenta de que hay mucho espacio a la derecha, podes probar con lo de evenly o algo asi
+pero debes quitarle los margins que tiene los contenedores bro, no te olvides de eso mi pana */ 
+.contenedor-contacto {
+    display: flex;
+    /* margin: 0 auto; */
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-items: baseline;
+
 }
 
-.contenedor-hero i {
-    font-size: 5rem;
-    color: #111c36;
+.saltear {
+    white-space: pre-line;
 }
-.contenedor-hero p {
-    margin-bottom: 0;
-    font-size: 2.6rem;
-}
-
-/* .imagen-contacto{
-    margin: 0 auto;
-    height: 35rem;
-    background-position: center center;
-    background-size: cover;
-    display:flex;
-    align-items: center;
-} */
-
 .fuente-titulo{
-    font-size: 2.7rem;
+    font-size: 2.9rem;
     margin-bottom: 0;
     color: black;
-}
-.redes p {
-
     text-align: center;
-    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.izquierda {
+    text-align: left!important;
 }
 
 
-    .servicio{
-        display: flex;
-        flex-direction: row;
-        /* flex-basis: calc(33.3% - 2rem); */
-        align-items: center;
-        color: black;
-        justify-content: space-evenly;
-    }
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* margin-right: 23rem; */
+    margin-left: -2rem;
 
-    .iconos{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-         width: 7.5rem;
-        height: 7.5rem;
-        border-radius: 50%;
-        background-color:#111c36;
-       
-        /* margin-top: 2rem; */
-        color:white;
-        font-size: 5rem;
-    }
+}
 
-    @media (min-width: 768px) {
-        .iconos {
-            width: 10rem;
-            height: 10rem;
-        }
-    }
+.red{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
- .iconos-redes{
-     font-size: 4rem;
+.textito {
+    text-align: center;
+    font-family: var(--titulos);
+    text-transform: uppercase;
+    padding: 1em 0;
+    letter-spacing: .2em;
+    margin: 0;
+    font-weight: 100;
+    font-size: 1.4rem;
+    color: #968cab;
+}
+
+
+.texto-red {
+    margin-left: 20px;
+    text-align: center;
+    font-family: var(--titulos);
+    text-transform: uppercase;
+    padding: 1em 0;
+    letter-spacing: .2em;
+    font-weight: 100;
+    white-space: pre-line;
+}
+.red p i {
+    font-size: 12rem;
+    max-width: 146px;
+    padding: 20px;
+    margin-right: 2rem;
+    border-right: 1px solid #968cab;
+}
+
+    
+ .seguinos{
+     margin-top: 5rem;
  }
 
-.contenedor-servicios {
+.redes-seguinos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     
-   
-    max-width: 120rem;
 }
 
-@media (min-width: 768px) {
-    .contenedor-servicios{
-        margin-top: 3rem;
-    }
+.icono {
+    color: #968cab;
 }
 
-.titulo-icono {
-    text-align: center;
+.icono-red {
+    font-size: 5rem;
+    margin: 0 2rem 0 0;
+    color: #968cab;
 }
 
-
-@media (min-width: 768px) {
-
-    .contenedor-servicios {
-        display: flex;
-        justify-content: space-between;
-    }
-
-
-    .servicio {
-        flex-direction: column;
-        flex:0 0 calc(33.3% - 1rem);
-
-    }
+.icono-red:last-of-type{
+    margin-right: 0;
 }
-
-
-
-
-
 /* .iconos i {
     font-size: 5rem;
 } */
