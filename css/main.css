@@ -592,14 +592,26 @@ body{
 
 /* bueno ahora me di cuenta de que hay mucho espacio a la derecha, podes probar con lo de evenly o algo asi
 pero debes quitarle los margins que tiene los contenedores bro, no te olvides de eso mi pana */ 
+
+
+/* bueno pana ahora te quedaste en la parte de que tenes que ver todo el tema de responsive umia, hay medio bugs, y agregar los links tambien */ 
 .contenedor-contacto {
+    margin: 0 auto;
     display: flex;
-    /* margin: 0 auto; */
-    justify-content: space-around;
-    flex-direction: row-reverse;
-    align-items: baseline;
+    flex-direction: column;   
 
 }
+
+
+@media (min-width: 768px) {
+    .contenedor-contacto{
+    /* margin: 0 auto; */
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: baseline;
+    }
+}
+
 
 .saltear {
     white-space: pre-line;
@@ -610,22 +622,63 @@ pero debes quitarle los margins que tiene los contenedores bro, no te olvides de
     color: black;
     text-align: center;
     text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@media (max-width: 375px ) {
+    .fuente-titulo{
+        font-size: 2.2rem;
+    }
 }
 
 .izquierda {
     text-align: left!important;
 }
 
-
+/* item 1 */ 
 .redes {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     /* margin-right: 23rem; */
     margin-left: -2rem;
+    order: -1;
 
 }
 
+
+
+@media (min-width: 768px) {
+    .seguinos-none{
+        display: none;
+    }   
+
+}
+
+.texto-contactos{
+    order: -2;
+}
+.seguinos{
+    display: none; /* para que aparezca el otrooo pa*/ 
+}
+
+@media (min-width: 768px) {
+    .texto-contactos{
+        order: 0;
+    }
+
+    .seguinos {
+        display: block; /* aca se activa cuando la pantalla es grande */
+    }
+    
+}
+
+
+
+
+/* .texto-abajo{
+    order: -1;
+} */
 .red{
     display: flex;
     justify-content: space-evenly;
@@ -646,8 +699,8 @@ pero debes quitarle los margins que tiene los contenedores bro, no te olvides de
 
 
 .texto-red {
-    margin-left: 20px;
-    text-align: center;
+    margin-left: 10px;
+    text-align: left;
     font-family: var(--titulos);
     text-transform: uppercase;
     padding: 1em 0;
@@ -656,11 +709,12 @@ pero debes quitarle los margins que tiene los contenedores bro, no te olvides de
     white-space: pre-line;
 }
 .red p i {
-    font-size: 12rem;
-    max-width: 146px;
+    font-size: 100px!important;
+    width: 140px;
     padding: 20px;
-    margin-right: 2rem;
+    margin: 0 2rem;
     border-right: 1px solid #968cab;
+    text-align: center;
 }
 
     
@@ -676,13 +730,13 @@ pero debes quitarle los margins que tiene los contenedores bro, no te olvides de
 }
 
 .icono {
-    color: #968cab;
+    color: #a986fa;
 }
 
 .icono-red {
     font-size: 5rem;
     margin: 0 2rem 0 0;
-    color: #968cab;
+    color:#a986fa;
 }
 
 .icono-red:last-of-type{
