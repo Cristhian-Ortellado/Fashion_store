@@ -237,6 +237,17 @@ nav.redes-sociales a i:hover {
 /************barra de navegacion*************/
 
 
+/* barra quieta*/
+
+.fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+
 /**logo**/
 
 div.logo a {
@@ -341,7 +352,7 @@ div.enlaces {
         align-items: center;
     }
     div.logo {
-        margin: 1rem auto;
+        margin: 0rem auto 1rem auto;
         display: block;
         align-self: stretch;
     }
