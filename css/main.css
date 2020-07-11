@@ -280,12 +280,6 @@ div.logo a div {
     width: 100%;
 }
 
-div.logo div img {
-    width: 64px;
-    height: 14px;
-    margin: 0px 2px 0 2px;
-}
-
 span.icono-mobile {
     margin: -1em 0 0 25px;
 }
@@ -309,6 +303,7 @@ nav.menu-movil {
     position: absolute;
     top: 2em;
     left: .8em;
+    cursor: alias;
 }
 
 nav.menu-movil span {
@@ -328,8 +323,30 @@ div.logo {
 
 div.enlaces {
     text-transform: uppercase;
-    display: none;
+    display: flex;
+    flex-direction: column;
     font-family: 'Oswald', sans-serif;
+    text-align: justify;
+    color: rgba(0, 0, 0, 0.5);
+    /* width: 60%; */
+}
+
+@media only screen and (max-width:767px) {
+    div.enlaces a {
+        font-weight: 500;
+        /* padding: 4px 1em; */
+        width: 100%;
+    }
+    div.enlaces {
+        /* display: block; */
+        /* position: fixed; */
+        top: 5px;
+        width: 200px;
+        height: 100%;
+    }
+    div.logo {
+        /* position: absolute; */
+    }
 }
 
 @media only screen and (min-width:768px) {
@@ -354,7 +371,8 @@ div.enlaces {
     div.logo {
         margin: 0rem auto 1rem auto;
         display: block;
-        align-self: stretch;
+        position: relative;
+        /* top: -15px; */
     }
     div.enlaces {
         margin-top: -15px;
@@ -362,11 +380,13 @@ div.enlaces {
         flex-direction: row;
         justify-content: space-around;
         width: 100%;
+        position: relative;
+        top: -25px;
     }
     div.enlaces a {
-        font-size: .8rem;
+        font-size: 1rem;
         text-decoration: none;
-        padding: 10px;
+        padding: 5px;
         transition: all ease-in-out 0.2s;
         color: #242424;
         margin: 0 25px;

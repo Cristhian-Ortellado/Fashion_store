@@ -19,4 +19,11 @@ $(function() {
         }
         return false;
     });
+
+    //menu movil
+    $('nav.menu-movil').on('click', menuMovil);
+
+    function menuMovil() {
+        console.log('oliwis');
+    }
 });
