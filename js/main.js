@@ -4,6 +4,7 @@
 
     }); //DomContentLoaded
 })(); //use strict
+var bandera = 0;
 $(function() {
     //barra de navegacion fija
     var windowsHeight = $(window).height();
@@ -21,9 +22,23 @@ $(function() {
     });
 
     //menu movil
-    $('nav.menu-movil').on('click', menuMovil);
+    $('div.toggle-btn').on('click', menuMovil);
 
     function menuMovil() {
-        console.log('oliwis');
+        if (bandera == 0) {
+            $('.sidebar').css({ 'height': '100%' });
+            $('h1').css({ 'opacity': '.1' });
+            $('.sidebar ul').css({ 'display': 'block' });
+            $('.toggle-btn span').css({ 'background-color': '#fafafa' });
+            bandera = 1;
+        } else {
+            $('.sidebar').css({ 'height': '0px' });
+            $('h1').css({ 'opacity': '.5' });
+            $('.sidebar ul').css({ 'display': 'none' });
+            $('.toggle-btn span').css({ 'background-color': 'rgba(0, 0, 0, 0.5)' });
+            bandera = 0;
+        }
     }
+
+
 });

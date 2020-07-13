@@ -298,58 +298,71 @@ div.barra-navegacion {
     width: 100%;
 }
 
-nav.menu-movil {
-    width: 2.5em;
-    position: absolute;
-    top: 2em;
-    left: .8em;
-    cursor: alias;
-}
-
-nav.menu-movil span {
-    width: 2.5em;
-    height: .4em;
-    display: block;
-    background-color: gray;
-    /* opacity: .5; */
-    border-radius: 1rem;
-    margin-bottom: 2px;
-    opacity: .5;
-}
-
 div.logo {
     padding-top: 1em;
 }
 
 div.enlaces {
     text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
     font-family: 'Oswald', sans-serif;
-    text-align: justify;
     color: rgba(0, 0, 0, 0.5);
-    /* width: 60%; */
 }
 
 @media only screen and (max-width:767px) {
-    div.enlaces a {
-        font-weight: 500;
-        /* padding: 4px 1em; */
-        width: 100%;
+    div.sidebar * {
+        font-family: 'Oswald', sans-serif;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .sidebar ul li {
+        font-weight: 100;
+        padding: 8px 1em;
+        border-bottom: 1px solid rgba(137, 137, 138, 0.25);
+    }
+    .sidebar ul li a {
+        color: white;
+        font-size: 1.4em;
+        opacity: 1;
+    }
+    .sidebar ul {
+        margin-top: 5em;
+        display: none;
+        transition: all .2s linear;
+    }
+    .sidebar {
+        position: fixed;
+        width: 16em;
+        height: 0;
+        background-color: rgba(12, 2, 2, .85);
+        opacity: 1;
+        transition: all .2s linear;
+        z-index: 2;
+    }
+    .toggle-btn {
+        position: absolute;
+        top: 2.1em;
+        left: 1em;
+        transition: all .2s linear;
+    }
+    .toggle-btn span {
+        width: 3em;
+        border-radius: 10px;
+        display: block;
+        margin-bottom: 3px;
+        height: 5px;
+        background-color: rgba(95, 91, 91, 0.5);
+        transition: all .3s linear;
     }
     div.enlaces {
-        /* display: block; */
-        /* position: fixed; */
-        top: 5px;
-        width: 200px;
-        height: 100%;
-    }
-    div.logo {
-        /* position: absolute; */
+        display: none;
     }
 }
 
 @media only screen and (min-width:768px) {
+    div.sidebar {
+        display: none;
+    }
     div.logo a h2 {
         font-size: 2rem;
     }
@@ -358,10 +371,6 @@ div.enlaces {
         margin-left: 1rem;
         text-align: justify;
         opacity: .5;
-    }
-    span.icono-mobile,
-    nav.menu-movil {
-        display: none;
     }
     nav.navegacion {
         display: flex;
@@ -372,7 +381,6 @@ div.enlaces {
         margin: 0rem auto 1rem auto;
         display: block;
         position: relative;
-        /* top: -15px; */
     }
     div.enlaces {
         margin-top: -15px;
@@ -438,11 +446,12 @@ div.oferta-venta {
     margin: 20px auto;
     text-align: center;
     /* border: 1px solid #ccc; */
-    padding: 0 0 0px 0;
+    padding: 0;
     background-color: white;
     transition: all ease-in-out .2s;
     width: 95%;
     height: 420px;
+    z-index: 0;
 }
 
 div.oferta-venta:hover {
