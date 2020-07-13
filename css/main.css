@@ -381,6 +381,7 @@ div.enlaces {
         margin: 0rem auto 1rem auto;
         display: block;
         position: relative;
+        padding-top: 0;
     }
     div.enlaces {
         margin-top: -15px;
