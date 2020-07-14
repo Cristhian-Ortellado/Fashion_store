@@ -1046,6 +1046,12 @@ a {
 
 /* Globales*/
 
+
+
+.contactos {
+    font-size: 62.5%;
+}
+
 .centrar-texto {
     text-align: center;
 }
@@ -1068,7 +1074,7 @@ pero debes quitarle los margins que tiene los contenedores bro, no te olvides de
 main.contenedor {
     width: 90%;
     margin: 0 auto;
-    text-align: justify;
+    /* text-align: justify; */
     background: #fafafa;
 }
 
@@ -1239,3 +1245,6 @@ main.contenedor {
 .mayus {
     text-transform: uppercase;
 }
+
+/* ultimos detalles pa */
+
