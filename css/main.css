@@ -42,6 +42,13 @@ myFirstWeb/css/main.css
    Base styles: opinionated defaults
    ========================================================================== */
 
+   :root {
+    --primario: #fafafa;
+    --fuentePrimaria: 'Poppins', sans-serif;
+    --titulos: 'iconic', sans-serif;
+    --subTitulos: 'Oswald', sans-serif;
+}
+
 html {
   color: #222;
   font-size: 1em;
@@ -298,6 +305,9 @@ textarea {
 /*  codigo cristhian
 /********Globales*******/
 
+
+
+
 *,
 *::before,
 *::after {
@@ -339,7 +349,6 @@ a {
 }
 
 h1 {
-    text-align: center;
     font-family: var(--titulos);
     text-transform: uppercase;
     padding: 1em 0;
@@ -352,7 +361,7 @@ h2 {
     font-family: var(--subTitulos);
 }
 
-@media only screen and (max-width:767px) {
+@media only screen and (max-width:768px) {
     h1 {
         letter-spacing: normal;
         /* margin: 0 auto 0 .5em; */
@@ -576,7 +585,7 @@ html {
 
 
 body{
-    background-color: #e1e1e1;
+    background-color: #fafafa;
 }
 
 
@@ -595,194 +604,216 @@ pero debes quitarle los margins que tiene los contenedores bro, no te olvides de
 
 
 /* bueno pana ahora te quedaste en la parte de que tenes que ver todo el tema de responsive umia, hay medio bugs, y agregar los links tambien */ 
-.contenedor-contacto {
+
+
+
+
+/* diseno mobile first pa jaja */
+
+
+
+@media only screen and (min-width: 768px) {
+}
+
+main.contenedor {
+    width: 90%;
     margin: 0 auto;
-    display: flex;
+    text-align: justify;
+    background:#fafafa;
+    
+
+}
+
+
+@media only screen and (max-width:767px ) {
+    
+    .seguinos {
+        display: none;
+    }
+
+    .textito br:last{
+        display: none;
+        
+    }
+}
+
+
+.textito {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3em;
+    /* max-width: 65%; cambiar dps para escritorio paana  */
+    /* text-transform: uppercase; */
+    
+
+}
+
+.texto-abajo {
+    margin-top: 100px;
+}
+ 
+
+@media (min-width: 768px) {
+    .textito{
+        max-width: 60%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .textito{
+        font-size: 1.8em;
+    }
+}
+.contenedor-contacto {
+    display: flex; 
     flex-direction: column;   
+    justify-items: center;
 
 }
 
 
 @media (min-width: 768px) {
     .contenedor-contacto{
-    /* margin: 0 auto; */
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
-    align-items: baseline;
-    }
-}
-
-
-.saltear {
-    white-space: pre-line;
-}
-.fuente-titulo{
-    font-size: 2.9rem;
-    margin-bottom: 0;
-    color: black;
-    text-align: center;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-@media (max-width: 375px ) {
-    .fuente-titulo{
-        font-size: 2.2rem;
-    }
-}
-
-.izquierda {
-    text-align: left!important;
-}
-
-/* item 1 */ 
-.redes {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* margin-right: 23rem; */
-    margin-left: -2rem;
-    order: -1;
-
-}
-
-
-
-@media (min-width: 768px) {
-    .seguinos-none{
-        display: none;
-    }   
-
-}
-
-.texto-contactos{
-    order: -2;
-}
-.seguinos{
-    display: none; /* para que aparezca el otrooo pa*/ 
-}
-
-@media (min-width: 768px) {
-    .texto-contactos{
-        order: 0;
-    }
-
-    .seguinos {
-        display: block; /* aca se activa cuando la pantalla es grande */
-    }
-    
-}
-
-
-
-
-/* .texto-abajo{
-    order: -1;
-} */
-.red{
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    }
+
+    div.redes{
+        /* display: flex;
+        flex-direction: column;
+        justify-content: flex-end; */
+        order: -2;
+        margin-right: 4rem;
+    }
 }
 
-.textito {
-    text-align: center;
-    font-family: var(--titulos);
+.fuente-titulo {
+    font-size: 2.1em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
-    padding: 1em 0;
-    letter-spacing: .2em;
-    margin: 0;
-    font-weight: 100;
-    font-size: 1.4rem;
-    color: #968cab;
+
+}
+
+
+.red {
+    display:flex ;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+
+.icono {
+    font-size: 1.3em;
+    /* margin-right:2rem; */
+    padding: 1em 1.2em;
+    border-right: 1px solid #968cab;
+    text-align: justify;
+    color: #A986FA;
+    max-width: 77.7px;
+    /* max-width: algo */
+    margin: 1rem 0 0 0;
 }
 
 
 .texto-red {
-    margin-left: 10px;
-    text-align: left;
-    font-family: var(--titulos);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3em;
+    max-width: 45%;
+    font-weight: 500;
+    color: rgba(0, 0,0,.5);
     text-transform: uppercase;
-    padding: 1em 0;
-    letter-spacing: .2em;
-    font-weight: 100;
-    white-space: pre-line;
-}
-.red p i {
-    font-size: 100px!important;
-    width: 140px;
-    padding: 20px;
-    margin: 0 2rem;
-    border-right: 1px solid #968cab;
-    text-align: center;
 }
 
+
+@media (min-width: 768px) {
+    .texto-red {
+        max-width:80% ;
+    }
     
- .seguinos{
-     margin-top: 5rem;
- }
+    .icono {
+        /* padding: 1em 1.6em; /* no queda tan bien  */
+        font-size: 2em ;
+         max-width: 119px;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+    .texto-contactos{
+        padding-left: 12rem;
+
+    } 
+}
+
+
+   .redes-seguinos a{
+       margin-right: 20px;
+   }
+   
+   .redes-seguinos a:last-of-type{
+       margin-right: 0;
+   }
+
+.texto-red{
+    margin-left: 2rem;
+}
+
+@media only screen and (min-width: 998px) {
+    .texto-red{
+        max-width: 40%; /*  para que este abajo*/
+        
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .seguinos-none{
+        display: none;
+    }   
+}
+
+
+
+
+.seguinos{
+    margin-top: 5rem;
+}
 
 .redes-seguinos {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   
+}
+
+@media (min-width: 768px) {
+    .redes-seguinos{
+        max-width: 60%;
+    }
 }
 
 .icono {
-    color: #a986fa;
+   color: #a986fa;
 }
 
 .icono-red {
-    font-size: 5rem;
-    margin: 0 2rem 0 0;
-    color:#a986fa;
+   font-size: 3em;
+   margin: 0 2rem 0 0;
+   color:#a986fa;
 }
 
 .icono-red:last-of-type{
-    margin-right: 0;
-}
-/* .iconos i {
-    font-size: 5rem;
-} */
-
-/* .redes-cont{
-    font-size: 3rem;
-} */
-
-.contenedor-servicios h3 {
-    font-size: 2.5rem;
-    margin: 2rem auto 0 auto;
+   margin-right: 0;
 }
 
 
-.iconos h3 {
-    text-align: center;
-    margin: 0 auto;
+.no-margin {
+    margin: 0;
+}
+
+.mayus{
+    text-transform: uppercase;
 }
 
 
-
-.mapa-contacto{
-    display: flex;
-    justify-content: center;
-    
-}
-
-
-.info-contactanos {
-    min-width: 268.8px;
-    text-align: center;
-    font-size: 1.65rem;
-    margin: 0.3rem 0;
-    color: black;
-    /* padding: 2rem; */
-}
-
-
-
-
-.info-contactanos a {
-    color: black;
-    /* text-decoration: none; */
-}
