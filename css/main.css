@@ -28,21 +28,26 @@ myFirstWeb/css/main.css
 @Cristhian-Ortellado Cristhian-Ortellado Se agregaron los archivos necesarios para iniciar el proyecto
 126cc81 28 days ago
 265 lines (230 sloc)  5.7 KB*/
-  
+
+
 /*! HTML5 Boilerplate v7.3.0 | MIT License | https://html5boilerplate.com/ */
 
+
 /* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+
+
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
 
+
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
 
-   :root {
+ :root {
     --primario: #fafafa;
     --fuentePrimaria: 'Poppins', sans-serif;
     --titulos: 'iconic', sans-serif;
@@ -50,10 +55,11 @@ myFirstWeb/css/main.css
 }
 
 html {
-  color: #222;
-  font-size: 1em;
-  line-height: 1.4;
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
 }
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -66,27 +72,29 @@ html {
  */
 
 ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+    background: #b3d4fc;
+    text-shadow: none;
 }
+
 
 /*
  * A better looking default horizontal rule
  */
 
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
+
 
 /*
  * Remove the gap between audio, canvas, iframes,
@@ -100,53 +108,60 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle;
+    vertical-align: middle;
 }
+
 
 /*
  * Remove default fieldset styles.
  */
 
 fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
+
 
 /*
  * Allow only vertical resizing of textareas.
  */
 
 textarea {
-  resize: vertical;
+    resize: vertical;
 }
+
 
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
 
 .browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
+
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+
 
 /*
  * Hide visually and from screen readers
  */
 
 .hidden {
-  display: none !important;
+    display: none !important;
 }
+
 
 /*
 * Hide only visually, but have it available for screen readers:
@@ -158,17 +173,18 @@ textarea {
 */
 
 .sr-only {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    /* 1 */
 }
+
 
 /*
 * Extends the .sr-only class to allow the element
@@ -178,22 +194,24 @@ textarea {
 
 .sr-only.focusable:active,
 .sr-only.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
 }
+
 
 /*
 * Hide visually and from screen readers, but maintain layout
 */
 
 .invisible {
-  visibility: hidden;
+    visibility: hidden;
 }
+
 
 /*
 * Clearfix: contain floats
@@ -209,15 +227,16 @@ textarea {
 
 .clearfix:before,
 .clearfix:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
-  clear: both;
+    clear: both;
 }
+
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
@@ -226,15 +245,16 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+    /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
-  /* Style adjustments for high resolution devices */
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
 }
+
 
 /* ==========================================================================
    Print styles.
@@ -243,70 +263,67 @@ textarea {
    ========================================================================== */
 
 @media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  /*
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
      * Don't show links that are fragment identifiers,
      * or use the `javascript:` pseudo protocol
      */
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-  pre {
-    white-space: pre-wrap !important;
-  }
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  /*
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
      * Printing Tables:
      * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
      */
-  thead {
-    display: table-header-group;
-  }
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
 
 
 /*  codigo cristhian
 /********Globales*******/
-
-
-
 
 *,
 *::before,
@@ -348,337 +365,99 @@ a {
     color: black;
 }
 
-h1 {
-    font-family: var(--titulos);
-    text-transform: uppercase;
-    padding: 1em 0;
-    letter-spacing: .2em;
-    margin: 0;
-    font-weight: 100;
-}
-
-h2 {
-    font-family: var(--subTitulos);
-}
-
-@media only screen and (max-width:768px) {
-    h1 {
-        letter-spacing: normal;
-        /* margin: 0 auto 0 .5em; */
-        /* width: 85%; */
-        text-align: justify;
-        padding: .8em 0 .1em 0;
-        color: black;
-        opacity: .5;
-    }
-}
-
-div.titulo {
-    width: 90%;
-    margin: 0 auto;
-}
-
-
-/******header*****/
-
-header {
-    display: block;
-    text-align: center;
-}
-
-div.barra-navegacion {
-    margin: 0 auto;
-}
-
-nav.redes-sociales a i {
-    font-size: 2.5em;
-    padding: 0.5%;
-    color: #242424;
-    transition: all ease-in-out 0.3s;
-}
-
-nav.redes-sociales a i:hover {
-    transform: scale(1.2);
-    -webkit-transform: scale(1.2);
-}
-
-
-/************barra de navegacion*************/
-
-
-/**logo**/
-
-div.logo a {
-    text-align: center;
-    color: #A986FA;
-    /* text-shadow: 3px 4px 5px rgba(104, 104, 104, 0.5); */
-}
-
-div.logo a div p {
-    margin-top: 0;
-    font-size: .7em;
-    font-weight: 400;
-    margin-bottom: 8px;
-    font-family: 'Cinzel', serif;
-}
-
-div.logo a h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.9rem;
-    font-weight: 500;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    margin-top: 10px;
-}
-
-div.logo a div {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
-
-div.logo div img {
-    width: 64px;
-    height: 14px;
-    margin: 0px 2px 0 2px;
-}
-
-span.icono-mobile {
-    margin: -1em 0 0 25px;
-}
-
-span.icono-mobile i {
-    font-size: 1.5rem;
-    color: #333333;
-}
-
-div.barra-navegacion {
-    -webkit-box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
-    -moz-box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
-    box-shadow: 0px 2px 4px -1px rgba(120, 115, 120, 1);
-    margin-top: 0;
-    width: 100%;
-}
-
-nav.menu-movil {
-    width: 2.5em;
-    position: absolute;
-    top: 2em;
-    left: .8em;
-}
-
-nav.menu-movil span {
-    width: 2.5em;
-    height: .4em;
-    display: block;
-    background-color: #333333;
-    border-radius: 1rem;
-    margin-bottom: 2px;
-    opacity: .5;
-}
-
-div.logo {
-    padding-top: 1em;
-}
-
-div.enlaces {
-    text-transform: uppercase;
-    display: none;
-    font-family: 'Oswald', sans-serif;
-}
-
-@media only screen and (min-width:768px) {
-    div.logo a h2 {
-        font-size: 2rem;
-    }
-    h1 {
-        /* width: 80%; */
-        margin-left: 1rem;
-        text-align: justify;
-        opacity: .5;
-    }
-    span.icono-mobile,
-    nav.menu-movil {
-        display: none;
-    }
-    nav.navegacion {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    div.logo {
-        margin: 1rem auto;
-        display: block;
-        align-self: stretch;
-    }
-    div.enlaces {
-        margin-top: -15px;
-        display: inline-flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-    }
-    div.enlaces a {
-        font-size: .8rem;
-        text-decoration: none;
-        padding: 10px;
-        transition: all ease-in-out 0.2s;
-        color: #242424;
-        margin: 0 25px;
-        font-weight: 500;
-        line-height: 13px;
-        text-decoration-color: #ccc;
-        font-family: 'Oswald', sans-serif;
-        letter-spacing: 2px;
-    }
-}
-
-@media only screen and (min-width:992px) {
-    div.enlaces a {
-        font-size: .9rem;
-        text-decoration-color: #ccc;
-        font-family: 'Oswald', sans-serif;
-        letter-spacing: 2px;
-    }
-    div.logo a h2 {
-        font-size: 2.5rem;
-    }
-}
-
-div.enlaces a:hover {
-    text-decoration: underline #ccc;
-    transform: scale(1.01);
-    -webkit-transform: scale(1.1);
-}
-
-@media only screen and (min-width:768px) {
-    div.enlaces span {
-        margin: 0 5%;
-    }
-}
-
-@media only screen and (min-width:992px) {
-    div.enlaces {
-        margin-left: 1.46%;
-    }
-}
-
-
-
-
-
-
-
 
 /*  codigo jose*/
 
-
 html {
     box-sizing: border-box;
-   min-height: 100%;
-   font-size: 62.5%;
-  }
-  *, *:before, *:after {
+    min-height: 100%;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
+}
 
-
-body{
+body {
     background-color: #fafafa;
 }
 
 
-
 /* Globales*/
 
-
-.centrar-texto{
+.centrar-texto {
     text-align: center;
 }
 
+
 /**  Contacto amigoooo! */
 
+
 /* bueno ahora me di cuenta de que hay mucho espacio a la derecha, podes probar con lo de evenly o algo asi
-pero debes quitarle los margins que tiene los contenedores bro, no te olvides de eso mi pana */ 
+pero debes quitarle los margins que tiene los contenedores bro, no te olvides de eso mi pana */
 
 
-/* bueno pana ahora te quedaste en la parte de que tenes que ver todo el tema de responsive umia, hay medio bugs, y agregar los links tambien */ 
-
-
+/* bueno pana ahora te quedaste en la parte de que tenes que ver todo el tema de responsive umia, hay medio bugs, y agregar los links tambien */
 
 
 /* diseno mobile first pa jaja */
 
-
-
-@media only screen and (min-width: 768px) {
-}
+@media only screen and (min-width: 768px) {}
 
 main.contenedor {
     width: 90%;
     margin: 0 auto;
     text-align: justify;
-    background:#fafafa;
-    
-
+    background: #fafafa;
 }
 
-
-@media only screen and (max-width:767px ) {
-    
+@media only screen and (max-width:767px) {
     .seguinos {
         display: none;
     }
-
-    .textito br:last{
+    .textito br:last {
         display: none;
-        
     }
 }
-
 
 .textito {
     font-family: 'Poppins', sans-serif;
     font-size: 1.3em;
     /* max-width: 65%; cambiar dps para escritorio paana  */
     /* text-transform: uppercase; */
-    
-
 }
 
 .texto-abajo {
     margin-top: 100px;
 }
- 
 
 @media (min-width: 768px) {
-    .textito{
+    .textito {
         max-width: 60%;
     }
 }
 
 @media only screen and (min-width: 992px) {
-    .textito{
+    .textito {
         font-size: 1.8em;
     }
 }
-.contenedor-contacto {
-    display: flex; 
-    flex-direction: column;   
-    justify-items: center;
 
+.contenedor-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
 }
 
-
 @media (min-width: 768px) {
-    .contenedor-contacto{
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
+    .contenedor-contacto {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
     }
-
-    div.redes{
+    div.redes {
         /* display: flex;
         flex-direction: column;
         justify-content: flex-end; */
@@ -692,16 +471,13 @@ main.contenedor {
     font-family: 'Oswald', sans-serif;
     font-weight: 500;
     text-transform: uppercase;
-
 }
 
-
 .red {
-    display:flex ;
+    display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 2rem;
-
 }
 
 .icono {
@@ -716,104 +492,91 @@ main.contenedor {
     margin: 1rem 0 0 0;
 }
 
-
 .texto-red {
     font-family: 'Oswald', sans-serif;
     font-size: 1.3em;
     max-width: 45%;
     font-weight: 500;
-    color: rgba(0, 0,0,.5);
+    color: rgba(0, 0, 0, .5);
     text-transform: uppercase;
 }
 
-
 @media (min-width: 768px) {
     .texto-red {
-        max-width:80% ;
+        max-width: 80%;
     }
-    
     .icono {
         /* padding: 1em 1.6em; /* no queda tan bien  */
-        font-size: 2em ;
-         max-width: 119px;
+        font-size: 2em;
+        max-width: 119px;
     }
 }
 
-
 @media only screen and (min-width: 768px) {
-    .texto-contactos{
+    .texto-contactos {
         padding-left: 12rem;
-
-    } 
+    }
 }
 
+.redes-seguinos a {
+    margin-right: 20px;
+}
 
-   .redes-seguinos a{
-       margin-right: 20px;
-   }
-   
-   .redes-seguinos a:last-of-type{
-       margin-right: 0;
-   }
+.redes-seguinos a:last-of-type {
+    margin-right: 0;
+}
 
-.texto-red{
+.texto-red {
     margin-left: 2rem;
 }
 
 @media only screen and (min-width: 998px) {
-    .texto-red{
-        max-width: 40%; /*  para que este abajo*/
-        
+    .texto-red {
+        max-width: 40%;
+        /*  para que este abajo*/
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .seguinos-none{
+    .seguinos-none {
         display: none;
-    }   
+    }
 }
 
-
-
-
-.seguinos{
+.seguinos {
     margin-top: 5rem;
 }
 
 .redes-seguinos {
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
-    .redes-seguinos{
+    .redes-seguinos {
         max-width: 60%;
     }
 }
 
 .icono {
-   color: #a986fa;
+    color: #a986fa;
 }
 
 .icono-red {
-   font-size: 3em;
-   margin: 0 2rem 0 0;
-   color:#a986fa;
+    font-size: 3em;
+    margin: 0 2rem 0 0;
+    color: #a986fa;
 }
 
-.icono-red:last-of-type{
-   margin-right: 0;
+.icono-red:last-of-type {
+    margin-right: 0;
 }
-
 
 .no-margin {
     margin: 0;
 }
 
-.mayus{
+.mayus {
     text-transform: uppercase;
 }
-
-
