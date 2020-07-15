@@ -1,0 +1,1 @@
+var ancho = screen.width; // declaración de la variable que se ira al documento php

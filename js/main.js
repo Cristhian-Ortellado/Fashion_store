@@ -5,6 +5,12 @@
     }); //DomContentLoaded
 })(); //use strict
 var bandera = 0;
+
+window.addEventListener("load", function() {
+    var ancho = screen.width;
+    document.cookie = "var=" + ancho + ";";
+
+});
 $(function() {
     //barra de navegacion fija
     var windowsHeight = $(window).height();
@@ -20,6 +26,7 @@ $(function() {
         }
         return false;
     });
+
 
     //menu movil
     $('div.toggle-btn').on('click', menuMovil);
@@ -39,6 +46,9 @@ $(function() {
             bandera = 0;
         }
     }
+
+    //tamaño de la pantalla
+
 
 
 });
