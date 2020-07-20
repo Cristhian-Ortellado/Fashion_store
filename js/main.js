@@ -5,6 +5,12 @@
     }); //DomContentLoaded
 })(); //use strict
 var bandera = 0;
+
+window.addEventListener("load", function() {
+    var ancho = screen.width;
+    document.cookie = "var=" + ancho + ";";
+
+});
 $(function() {
     //barra de navegacion fija
     var windowsHeight = $(window).height();
@@ -21,6 +27,7 @@ $(function() {
         return false;
     });
 
+
     //menu movil
     $('div.toggle-btn').on('click', menuMovil);
 
@@ -35,10 +42,13 @@ $(function() {
             $('.sidebar').css({ 'height': '0px' });
             $('h1').css({ 'opacity': '.5' });
             $('.sidebar ul').css({ 'display': 'none' });
-            $('.toggle-btn span').css({ 'background-color': 'rgba(0, 0, 0, 0.5)' });
+            $('.toggle-btn span').css({ 'background-color': 'rgba(95, 91, 91, 0.5)' });
             bandera = 0;
         }
     }
+
+    //tamaño de la pantalla
+
 
 
 });

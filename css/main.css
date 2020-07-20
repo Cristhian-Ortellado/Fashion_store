@@ -358,6 +358,7 @@ div.enlaces {
         font-weight: 100;
         padding: 8px 1em;
         border-bottom: 1px solid rgba(137, 137, 138, 0.25);
+        text-align: justify;
     }
     .sidebar ul li a {
         color: white;
@@ -371,7 +372,7 @@ div.enlaces {
     }
     .sidebar {
         position: fixed;
-        width: 16em;
+        width: 14em;
         height: 0;
         background-color: rgba(12, 2, 2, .85);
         opacity: 1;
