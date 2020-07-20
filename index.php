@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/main.css?v=<?php echo(rand()); ?>">
+    <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
@@ -31,18 +32,19 @@
 <!-- hacemos una consulta -->
 <?php
         try {
+             include_once 'includes/funciones/funciones.php';
             require_once('includes/funciones/bd_conexion.php');
-            $sql = "SELECT * FROM productos";
-            $resultado = $conn->query($sql);
+            $sql = "SELECT id, nombre, precio, url_img, cantidad, tamano, descuento, novedad, sexo FROM productos ; ";
+            $resultadoProducto = $conn->query($sql);
+            $rowsProducto = $resultadoProducto->num_rows;
+           
             //guardamos el numero de filas
-            $rows = $resultado->num_rows ;
-            
         } catch (Exception $th) {
             echo $th->getMessage();
         }
         ?>
     <body class="home">
-    
+        
         <header>
           
             <!-- incluimos el archivo header.php -->
@@ -72,26 +74,85 @@
                 <h2>MUJERES</h2>
             </div>
             <section class="card-productos contenido mujeres">
-
-                <?php for ($i=0; $i <4 && $rows>=4; $i++) { 
-                    $productos= $resultado->fetch_assoc();
+                <?php for ($i=0; $i <4 ; $i++) { 
+                
+                    $productos= $resultadoProducto->fetch_assoc();
                     while($productos['sexo']!='1'){
-                        $productos= $resultado->fetch_assoc();
+                        $productos= $resultadoProducto->fetch_assoc();
                     }
                     ?>
-                <div class="card">
-                    <div class="img-producto">
-                        <img src='<?php echo $productos['url_img'];?>' alt="ropa">
-                    </div>
-                    <div class="card-opciones">
-                        <p class="nombre-producto">
-                            <?php echo $productos['nombre']; ?>
-                        </p>
-                        <p>
-                            <?php echo $productos['precio']; ?><i class="fa fa-dollar" aria-hidden="true"></i></p>
-                        <a href="#">Detalles</a>
-                    </div>
-                </div>
+                    <div class="card" id="#card-<?php echo $productos['id'];?>">
+                        <div class="img-producto">
+                            <img src='<?php echo $productos['url_img'];?>' alt="ropa">
+                        </div><!-- img-producto -->
+                        <div class="card-opciones">
+                            <p class="nombre-producto">
+                                <?php echo $productos['nombre']; ?>
+                            </p>
+                            <p>
+                                <?php echo $productos['precio']; ?><i class="fa fa-dollar" aria-hidden="true"></i></p>
+                            <a href="#modal-<?php echo $productos['id'];?>">Detalles</a>
+                        </div><!-- card-opciones -->
+
+                    </div><!-- card -->
+                    <div class="container-all" id="modal-<?php echo $productos['id']; ?>">
+                            <div class="popup">
+                                <div class="img-popup">
+                                <img src='<?php echo $productos['url_img'];?>' alt="ropa">
+                                    <p class="redes">Seguinos </p>
+                                    <div class="redes">
+                                        <i class="fa fa-whatsapp"><a href=""></a></i>
+                                        <i class="fa fa-instagram"><a href=""></a></i>
+                                    </div>
+                                </div>
+                                <div class="container-text">
+                                    <h1><?php echo $productos['nombre'] ;?></h1>
+                                    <p class="precio"><?php echo $productos['precio'] ;?><span> Gs</span></p>
+                                    <div class="ropa-detalles">
+                                        <p class="color">Colores : 
+                                            <?php 
+                                            //imprimimos los colores
+                                            //abrimos una consulta a la tabla colores
+                                            $sql = "SELECT id_color FROM color_producto WHERE id_producto = ". $productos['id'].";";
+                                            $resultadoColor = $conn->query($sql);
+                                            $rowsColor = $resultadoColor->num_rows;
+                                            //recorremos la tabla colores para hallar cada valor hexadecimal por cada id producto existente en la tabla color_producto
+                                            for ($j=0; $j <$rowsColor ; $j++) {    
+                                                try {
+                                                    //encontramos el id_color por cada producto
+                                                    $productoColor = $resultadoColor->fetch_assoc();
+                                                    //hacemos la consulta
+                                                    $sql = "SELECT valor FROM colores WHERE id = ". $productoColor['id_color'].";";
+                                                    $respuestaColores = $conn->query($sql);
+                                                    $color=$respuestaColores->fetch_assoc();
+                                                } catch (Exception $th) {
+                                                    echo $th->getMessage();
+                                                }?>
+                                                <span style="background:<?php echo $color['valor'] ?>"></span>
+                                            <?php } ?>
+                                        </p>
+                                        <p>Tamaños : <span><?php echo $productos['tamano']; ?></span></p>
+                                        <p>Disponibilidad :<span>
+                                            <?php if($productos['cantidad']>0)
+                                                echo "En Stock";
+                                            else
+                                                echo "Acabado";
+                                            ?>
+                                        </span></p>
+                                    </div><!--ropa-detalles-->
+                                    <p>Pedidos Aqui</p>
+                                    <div class="pedidos">
+                                        <a><i class="fa fa-whatsapp"></i></a>
+                                        <a href=""><i class="fa fa-instagram"></i></a>
+                                        <a href="whatsapp://send?text=Mira%20esta%20prenda%20en%20oferta%20<?php echo url_actual(); ?>" data-action="share/whatsapp/share"><input type="button" value="Compartir"></a>
+                                    </div><!--pedidos-->
+                                </div><!--container-text-->
+                                <a href="#card-<?php echo $productos['id'];?>" class="btn-popup-close">
+                                    <img src="img/close.png" alt="">
+                                </a>
+                            </div><!--popup-->
+                        </div><!-- container-all -->
+
                 <?php } ?>
             </section>
             <div class="subtitulo">
@@ -100,35 +161,91 @@
             <section class="contenido card-productos hombres">
                 <?php
                     //volvemos a la primera fila de la consulta
-                    $resultado->data_seek(0);
+                    $resultadoProducto->data_seek(0);
                     //determinamos el numero de card por el tama;o de la pantalla
                     $pantalla = intval($_COOKIE['var']);
                     $cantidadRopa = 3;
                     if ($pantalla<700) {
                         $cantidadRopa = 2;
-                    }
-                    
-            ?>
+                    } 
 
-                    <?php for ($i=0; $i <$cantidadRopa; $i++) { 
-                    $productos= $resultado->fetch_assoc();
-                    while($productos['sexo']!='2' ){
-                        $productos= $resultado->fetch_assoc();
-                    }       
-                    ?>
-                    <div class="card">
-                        <div class="img-producto">
-                            <img src='<?php echo $productos['url_img'];?>' alt="ropa">
-                        </div>
-                        <div class="card-opciones">
-                            <p class="nombre-producto">
-                                <?php echo $productos['nombre']; ?>
-                            </p>
-                            <p>
-                                <?php echo $productos['precio']; ?><i class="fa fa-dollar" aria-hidden="true"></i></p>
-                            <a href="#">Detalles</a>
-                        </div>
-                    </div>
+                    for ($i=0; $i <$cantidadRopa; $i++) { 
+                        $productos= $resultadoProducto->fetch_assoc();
+                        while($productos['sexo']!='2' ){
+                            $productos= $resultadoProducto->fetch_assoc();
+                        }       
+                        ?>
+                        <div class="card">
+                            <div class="img-producto">
+                                <img src='<?php echo $productos['url_img'];?>' alt="ropa">
+                            </div>
+                            <div class="card-opciones">
+                                <p class="nombre-producto">
+                                    <?php echo $productos['nombre']; ?>
+                                </p>
+                                <p>
+                                    <?php echo $productos['precio']; ?><i class="fa fa-dollar" aria-hidden="true"></i></p>
+                                    <a href="#modal-<?php echo $productos['id'];?>">Detalles</a>
+                            </div><!--card-opciones-->
+                        </div><!--card-->
+
+                        <div class="container-all" id="modal-<?php echo $productos['id']; ?>">
+                            <div class="popup">
+                                <div class="img-popup">
+                                <img src='<?php echo $productos['url_img'];?>' alt="ropa">
+                                    <p class="redes">Seguinos </p>
+                                    <div class="redes">
+                                        <i class="fa fa-whatsapp"><a href=""></a></i>
+                                        <i class="fa fa-instagram"><a href=""></a></i>
+                                    </div>
+                                </div>
+                                <div class="container-text">
+                                    <h1><?php echo $productos['nombre'] ;?></h1>
+                                    <p class="precio"><?php echo $productos['precio'] ;?><span> Gs</span></p>
+                                    <div class="ropa-detalles">
+                                        <p class="color">Colores : 
+                                            <?php 
+                                            //imprimimos los colores
+                                            //abrimos una consulta a la tabla colores
+                                            $sql = "SELECT id_color FROM color_producto WHERE id_producto = ". $productos['id'].";";
+                                            $resultadoColor = $conn->query($sql);
+                                            $rowsColor = $resultadoColor->num_rows;
+                                            //recorremos la tabla colores para hallar cada valor hexadecimal por cada id producto existente en la tabla color_producto
+                                            for ($j=0; $j <$rowsColor ; $j++) {    
+                                                try {
+                                                    //encontramos el id_color por cada producto
+                                                    $productoColor = $resultadoColor->fetch_assoc();
+                                                    //hacemos la consulta
+                                                    $sql = "SELECT valor FROM colores WHERE id = ". $productoColor['id_color'].";";
+                                                    $respuestaColores = $conn->query($sql);
+                                                    $color=$respuestaColores->fetch_assoc();
+                                                } catch (Exception $th) {
+                                                    echo $th->getMessage();
+                                                }?>
+                                                <span style="background:<?php echo $color['valor'] ?>"></span>
+                                            <?php } ?>
+                                        </p>
+                                        <p>Tamaños : <span><?php echo $productos['tamano']; ?></span></p>
+                                        <p>Disponibilidad :<span>
+                                            <?php if($productos['cantidad']>0)
+                                                echo "En Stock";
+                                            else
+                                                echo "Acabado";
+                                            ?>
+                                        </span></p>
+                                    </div><!--ropa-detalles-->
+                                    <p>Pedidos Aqui</p>
+                                    <div class="pedidos">
+                                        <a><i class="fa fa-whatsapp"></i></a>
+                                        <a href=""><i class="fa fa-instagram"></i></a>
+                                        <a href="whatsapp://send?text=Mira%20esta%20prenda%20en%20oferta%20<?php echo url_actual(); ?>" data-action="share/whatsapp/share"><input type="button" value="Compartir"></a>
+                                    </div><!--pedidos-->
+                                </div><!--container-text-->
+                                <a href="#" class="btn-popup-close">
+                                    <img src="img/close.png" alt="">
+                                </a>
+                            </div><!--popup-->
+                        </div><!-- container-all -->
                     <?php } ?>
             </section>
             <!-- contenido card-productos -->
