@@ -2,7 +2,7 @@
 <html class="no-js" lang="">
 
 <head>
-   <meta charset="utf-8">
+    <meta charset="utf-8">
     <title>Luciernaga Boutique</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,34 +27,8 @@
 </head>
 
 <body>
-    <header>  
-        <div class="contenedor barra-navegacion">
-            <nav class="navegacion">
-                <nav class="menu-movil">
-                    <span></span>
-                    <span> </span>
-                    <span> </span>
-                </nav>
-                <div class="logo">
-                    <a href="index.html">
-                        <h2>Luciernaga</h2>
-                        <div>
-                            <!-- <img src="img/separador5.jpg" alt=""> -->
-                            <p>Boutique</p>
-                            <!-- <img src="img/separador5.jpg" alt=""> -->
-                        </div>
-                    </a>
-                </div>
-                <!-- <span class="icono-mobile"><i class="fa fa-shopping-bag" aria-hidden="true"></i></span> -->
-                <div class="enlaces">
-                    <a href="#">Home</a>
-                    <a href="#">Productos</a>
-                    <span></span>
-                    <a href="#">Contacto</a>
-                    <a href="#">Sobre Nosotros</a>
-                </div>
-            </nav>
-        </div>
+    <header>
+        
     </header>
 
     <main>
@@ -63,9 +37,11 @@
                 <div class="row">
                     <div class="col-sm-7">
                         <h2 class="text-center">ACERCA DE NOSOTROS</h2>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
+                            to using 'Content here, content here', making it look like readable English.</p>
                         <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
-                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College
+                            in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. </p>
                     </div>
                     <div class="col-sm-5">
                         <div class="img-wrap">
@@ -79,17 +55,23 @@
         <div class="ayuda-mobile">
             <h2>Necesita Asistencia?</h2>
             <p>Por favor contacte a atención al cliente vía</p>
-            <p><a href="#" >Contacto</a></p>
+            <p><a href="#">Contacto</a></p>
         </div>
 
         <div class="redes-container">
             <ul>
                 <h2 class="seguinos">SEGUINOS</h2>
-                <li><a href="#" class="facebook"><img class="icon-social" src="img/facebook.jpg" alt="fb"></a></li>
-                <li><a href="#" class="instagram"><img class="icon-social" src="img/instagram.jpg" alt="fb"></a></li>
-                <li><a href="#" class="twitter"><img class="icon-social" src="img/twitter.jpg" alt="fb"></a></li>
+                <li>
+                    <a href="#" class="facebook"><img class="icon-social" src="img/facebook.jpg" alt="fb"></a>
+                </li>
+                <li>
+                    <a href="#" class="instagram"><img class="icon-social" src="img/instagram.jpg" alt="fb"></a>
+                </li>
+                <li>
+                    <a href="#" class="twitter"><img class="icon-social" src="img/twitter.jpg" alt="fb"></a>
+                </li>
             </ul>
-        </div>   
+        </div>
     </main>
 
     <!--<footer class="pie">
