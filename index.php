@@ -241,7 +241,7 @@
                                         <a href="whatsapp://send?text=Mira%20esta%20prenda%20en%20oferta%20<?php echo url_actual(); ?>" data-action="share/whatsapp/share"><input type="button" value="Compartir"></a>
                                     </div><!--pedidos-->
                                 </div><!--container-text-->
-                                <a href="#" class="btn-popup-close">
+                                <a href="#card-<?php echo $productos['id'];?>" class="btn-popup-close">
                                     <img src="img/close.png" alt="">
                                 </a>
                             </div><!--popup-->

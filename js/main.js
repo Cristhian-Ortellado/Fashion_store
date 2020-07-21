@@ -20,9 +20,13 @@ $(function() {
         if (scroll > 0) {
             $('div.barra-navegacion').addClass('fixed');
             $('body').css({ 'margin-top': barraHeight + 'px' });
+            //para la pagina contacto
+            $('body.contactos main').css({ 'margin-top': (barraHeight + 32) + 'px' });
         } else {
             $('div.barra-navegacion').removeClass('fixed');
             $('body').css({ 'margin-top': 0 + 'px' });
+            //para la pagina contacto
+            $('body.contactos main').css({ 'margin-top': 32 + 'px' });
         }
         return false;
     });

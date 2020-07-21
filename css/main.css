@@ -1047,10 +1047,9 @@ a {
 
 /* Globales*/
 
-
-
-.contactos {
+.contactos main {
     font-size: 62.5%;
+    padding-bottom: 1em;
 }
 
 .centrar-texto {
@@ -1076,14 +1075,15 @@ main.contenedor {
     width: 90%;
     margin: 0 auto;
     /* text-align: justify; */
-    background: #fafafa;
+    background-color: transparent;
+    z-index: 0;
 }
 
 @media only screen and (max-width:767px) {
     .seguinos {
         display: none;
     }
-    .textito br:last {
+    .textito br:last-child {
         display: none;
     }
 }
@@ -1091,8 +1091,10 @@ main.contenedor {
 .textito {
     font-family: 'Poppins', sans-serif;
     font-size: 1.3em;
+    font-weight: 100;
     /* max-width: 65%; cambiar dps para escritorio paana  */
     /* text-transform: uppercase; */
+    color: grey;
 }
 
 .texto-abajo {
@@ -1107,7 +1109,7 @@ main.contenedor {
 
 @media only screen and (min-width: 992px) {
     .textito {
-        font-size: 1.8em;
+        font-size: 1.6em;
     }
 }
 
@@ -1124,19 +1126,18 @@ main.contenedor {
         align-items: center;
     }
     div.redes {
-        /* display: flex;
-        flex-direction: column;
-        justify-content: flex-end; */
         order: -2;
         margin-right: 4rem;
     }
 }
 
 .fuente-titulo {
-    font-size: 1.9rem;
-    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-family: 'Cinzel', sans;
     font-weight: 500;
     text-transform: uppercase;
+    margin-top: 1em;
+    padding-top: 0;
 }
 
 .red {
@@ -1149,7 +1150,7 @@ main.contenedor {
 .icono {
     font-size: 1.3em;
     /* margin-right:2rem; */
-    padding: 1em 1.2em;
+    padding: 1em 2em 1em 1em;
     border-right: 1px solid #968cab;
     text-align: justify;
     color: #A986FA;
@@ -1159,15 +1160,18 @@ main.contenedor {
 }
 
 .texto-red {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.3em;
     max-width: 45%;
-    font-weight: 500;
-    color: rgba(0, 0, 0, .5);
+    font-weight: 100;
+    color: grey;
     text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
+    .fuente-titulo {
+        font-size: 1.8rem;
+    }
     .texto-red {
         max-width: 80%;
     }
@@ -1232,7 +1236,7 @@ main.contenedor {
 .icono-red {
     font-size: 3em;
     margin: 0 2rem 0 0;
-    color: #a986fa;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .icono-red:last-of-type {
@@ -1247,5 +1251,5 @@ main.contenedor {
     text-transform: uppercase;
 }
 
-/* ultimos detalles pa */
 
+/* ultimos detalles pa */

@@ -7,14 +7,14 @@
                         <span></span>
                     </div>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sobre Nosotros</a></li>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">Sobre Nosotros</a></li>
+                        <li><a href="productos.php">Productos</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="index.php">
                         <h2>Luciernaga</h2>
                         <div>
                             
@@ -25,11 +25,11 @@
                 </div>
                 
                 <div class="enlaces">
-                    <a href="#">Home</a>
-                    <a href="#">Productos</a>
+                    <a href="index.php">Home</a>
+                    <a href="productos.php">Productos</a>
                     <span></span>
-                    <a href="#">Contacto</a>
-                    <a href="#">Sobre Nosotros</a>
+                    <a href="contacto.php">Contacto</a>
+                    <a href="about.php">Sobre Nosotros</a>
                 </div>
             </nav>
         </div>

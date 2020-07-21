@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/about.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -26,9 +26,9 @@
     <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body >
     <header>
-        
+    <?php include_once 'includes/templates/header.php'; ?>
     </header>
 
     <main>
@@ -55,30 +55,18 @@
         <div class="ayuda-mobile">
             <h2>Necesita Asistencia?</h2>
             <p>Por favor contacte a atención al cliente vía</p>
-            <p><a href="#">Contacto</a></p>
-        </div>
-
-        <div class="redes-container">
-            <ul>
-                <h2 class="seguinos">SEGUINOS</h2>
-                <li>
-                    <a href="#" class="facebook"><img class="icon-social" src="img/facebook.jpg" alt="fb"></a>
-                </li>
-                <li>
-                    <a href="#" class="instagram"><img class="icon-social" src="img/instagram.jpg" alt="fb"></a>
-                </li>
-                <li>
-                    <a href="#" class="twitter"><img class="icon-social" src="img/twitter.jpg" alt="fb"></a>
-                </li>
-            </ul>
+            <p><a href="contacto.php">Contacto</a></p>
         </div>
     </main>
 
-    <!--<footer class="pie">
-        <hr/>
-        <h2>Pie de página</h2>
-    </footer>-->
-    <script src="js/main.js"></script>
+    <!-- incluimos el footer -->
+    <?php include_once 'includes/templates/footer.php' ; ?>
+    <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')
+        </script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
 </body>
-
 </html>
