@@ -1,0 +1,70 @@
+section.filtro-mobile {
+    margin-bottom: 1em;
+    font-family: 'Oswald', sans-serif;
+    color: grey;
+}
+
+section.filtro-mobile p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    margin: .5em 0;
+}
+
+form#form-filtro select {
+    color: grey;
+    border: 1px solid rgba(0, 0, 0, .5);
+    font-size: 1.3em;
+    /* border-radius: 5px; */
+    /* width: 31%; */
+}
+
+form#form-filtro select option {
+    font-size: .8em;
+}
+
+form#form-filtro input {
+    font-family: "Poppins", sans-serif;
+    color: grey;
+    font-size: 1.1em;
+    background-color: #A986FA;
+    border: 0px solid grey;
+    color: #fafafa;
+    font-weight: 100;
+}
+
+@media only screen and (max-width:767px) {
+    form#form-filtro {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 2em;
+    }
+    form#form-filtro input {
+        font-size: 1.2em;
+        width: 5.4em;
+    }
+    form#form-filtro select {
+        padding: 0px 3px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    form#form-filtro {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 3em auto;
+    }
+    section.filtro-mobile {
+        /* width: 82%; */
+        margin: 0 auto;
+    }
+    form#form-filtro select {
+        margin-right: 2em;
+    }
+    form#form-filtro input {
+        font-size: 1.2em;
+        width: 6em;
+        height: 1.8em;
+    }
+}

@@ -1,86 +1,109 @@
-<?php
-  header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-  header("Expires: Sat, 1 Jul 2000 05:00:00 GMT"); // Fecha en el pasado
-?>
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Luciernaga Boutique</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
-    <!-- Place favicon.ico in the root directory -->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/fontawesome.css">
     <link rel="stylesheet" href="css/main.css?v=<?php echo(rand()); ?>">
+    <link rel="stylesheet" href="css/productos.css?v=<?php echo(rand()); ?>">
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
-    <meta name="theme-color" content="#fafafa">
- 
-
-
 </head>
-<!-- hacemos una consulta -->
+
 <?php
+    
         try {
-             include_once 'includes/funciones/funciones.php';
+            include_once 'includes/funciones/funciones.php';
             require_once('includes/funciones/bd_conexion.php');
-            $sql = "SELECT id, nombre, precio, url_img, cantidad, tamano, descuento, novedad FROM productos ; ";
+            if (isset($_POST) && count($_POST) != 0) {
+                //comprobamos el sexo, tipo y estado(ofertas etc)
+                $tipo = $_POST['tipo'];
+                $sql = "SELECT id, nombre, precio, url_img, cantidad, tamano, descuento, nombre_tipo, novedad FROM `productos` INNER JOIN tipos ON productos.clasificacion = tipos.id_tipos ";
+                $sql .= " WHERE nombre_tipo = '$tipo' " ;
+                switch ($_POST['estado']) {
+                    case 'Ofertas':
+                        $sql .=" AND  descuento>0 ;";
+                        break;
+                    case 'Novedades':
+                        $sql .=" AND  novedad = 1 ;";
+                        break;
+                    default:
+                    break;
+                }
+                
+            }else  if (isset($_GET) ){
+                if ($_GET['estado']=='Ofertas') {
+                $sql = "SELECT id, nombre, precio, url_img, cantidad, tamano, descuento, novedad, nombre_tipo FROM productos INNER JOIN tipos ON productos.clasificacion = tipos.id_tipos WHERE nombre_tipo= 'Blusas' AND descuento>0 ; ";
+                }else{
+                    $sql = "SELECT id, nombre, precio, url_img, cantidad, tamano, descuento, novedad, nombre_tipo FROM productos INNER JOIN tipos ON productos.clasificacion = tipos.id_tipos WHERE nombre_tipo= 'Blusas' AND novedad=1 ; ";
+                }
+            }else {
+                $sql = "SELECT id, nombre, precio, url_img, cantidad, tamano, descuento, novedad, nombre_tipo FROM productos INNER JOIN tipos ON productos.clasificacion = tipos.id_tipos WHERE nombre_tipo= 'Blusas'  ; ";
+            }
             $resultadoProducto = $conn->query($sql);
             //guardamos el numero de filas
             $rowsProducto = $resultadoProducto->num_rows;
-           
-
+           //vemos desde que dispositivo esta corriendo la pagina web
+       
+           $pixeles = (($_COOKIE['var']) <992 && ($_COOKIE['var'])>700 ) ? 3 : 4 ;
         } catch (Exception $th) {
             echo $th->getMessage();
         }
         ?>
-    <body class="home">
-        
-        <header>
-          
-            <!-- incluimos el archivo header.php -->
-            <?php include_once 'includes/templates/header.php'; ?>
-        </header>
-        <div class="titulo">
-            <h1>Luce tu propio estilo</h1>
-        </div>
-        <div class="contenedor contenedor-venta ">
-            <div class="oferta-venta ">
-                <img src="img/vendido.jpeg" alt="">
-                <a href="productos.php?estado=Novedades"><p>Novedades</p></a>
-            </div>
-            <div class="oferta-venta ">
-                <img src="img/bolsas.jpg" alt="">
-                <a href="productos.php?estado=Ofertas"><p>Ofertas</p></a>
-            </div>
-            <div class="oferta-venta ">
-                <img src="img/model (2).jpg" alt="">
-                <a href="contacto.php"><p>Consultas</p></a>
-            </div>
-        </div>
-        <!-- .contenedor-venta -->
+     
+<body class="productos">
+    <header>
+           <!-- incluimos el archivo header.php -->
+           <?php include_once 'includes/templates/header.php'; ?>
+    </header>
+    <div class="contenido">
+        <section class="filtro-mobile">
+            <!-- <p>Ordenar por:</p> -->
+            <form name="form_filtro" id="form-filtro" action="productos.php" method="post" >
+                <select name="tipo" class="filtro-select" >
+                    <option  <?php echo optionSelected('Blusas', 'tipo'); ?> >Blusas</option>
+                    <option <?php echo optionSelected('Jeans', 'tipo'); ?> >Jeans</option>
+                    <option  <?php echo optionSelected('Camperas', 'tipo'); ?> >Camperas</option>
+                    <option  <?php echo optionSelected('Conjuntos', 'tipo'); ?> >Conjuntos</option>
+                    <option  <?php echo optionSelected('Sudaderas', 'tipo'); ?> >Sudaderas</option>
+                    <option  <?php echo optionSelected('Camisas', 'tipo'); ?> >Camisas</option>
+                    <option  <?php echo optionSelected('Calzados', 'tipo'); ?> >Calzados</option>
+                </select>
+                <select name="estado" class="filtro-select" >
+                    <option <?php echo optionSelected('Todos', 'estado'); ?>>Todos</option>
+                    <option <?php echo optionSelected('Novedades', 'estado'); ?>>Novedades</option>
+                    <option <?php echo optionSelected('Ofertas', 'estado'); ?>>Ofertas</option>
+                </select>
+                <input type="submit" value="Filtrar">
+            </form>
 
-        <div class="contenedor ">
-            <div class="subtitulo">
-                <h2>MUJERES</h2>
-            </div>
-            <section class="card-productos contenido mujeres">
-                <?php for ($i=0; $i <4 ; $i++) { 
-                
-                    $productos= $resultadoProducto->fetch_assoc();
-                  
+        </section><!--filtro-mobile-->
+       
+        <section class="productos">
+        <!-- <section class="card-productos contenido mujeres"> -->
+                <?php for ($i=0; $i <$rowsProducto ; $i++) { 
+                    //asociamos el array
+                    $productos= $resultadoProducto->fetch_assoc(); ?>
+                    <!-- creamos las tarjetas -->
+                    <?php 
+                        //cada 4 cartas crearemos un section
+                        if (($i)%($pixeles)==0) 
+                            echo '<section class="card-productos contenido mujeres">';
                     ?>
                     <div class="card" id="card-<?php echo $productos['id'];?>">
+                            <?php
+                                //si hay descuento generamos un texto que indique que porcentaje es la rebaja
+                                if ($productos['descuento'] != '0') {
+                                    echo '<p class="porcentaje">' .$productos['descuento'] .'%</p>';
+                                }
+                            ?>  
                         <div class="img-producto">
                             <img src='<?php echo $productos['url_img'];?>' alt="ropa">
                         </div><!-- img-producto -->
@@ -106,7 +129,16 @@
                                 </div>
                                 <div class="container-text">
                                     <h1><?php echo $productos['nombre'] ;?></h1>
-                                    <p class="precio"><?php echo $productos['precio'] ;?><span> Gs</span></p>
+                                    <?php
+                                        //verificamos si posee algun descuento
+                                        if ($productos['descuento'] != '0'){ 
+                                            $descuento = intval(($productos['precio'])*($productos['descuento']/100));            ?>
+                                            <div class="contenedor-precio">
+                                                <p class="precio tachado"><?php echo $productos['precio'] ;?><span> Gs</span></p>  <p class="precio descuento"><?php echo intval($productos['precio'] - $descuento) ;?><span> Gs</span></p>
+                                            </div>
+                                <?php }else{  ?>
+                                                <p class="precio "><?php echo $productos['precio'] ;?><span> Gs</span></p>
+                                    <?php    }  ?>
                                     <div class="ropa-detalles">
                                         <p class="color">Colores : 
                                             <?php 
@@ -151,13 +183,13 @@
                                 </a>
                             </div><!--popup-->
                         </div><!-- container-all -->
-
+                    <?php if (($i+1)%($pixeles)==0) {
+                        echo "</section>";
+                    } ?>
                 <?php } ?>
-            </section>
-            
-            <!-- contenido card-productos -->
-        </div>
-        <!-- contenedor -->
+        </section><!--productos-->
+    </div>
+    <!-- contenedor -->
         <!-- incluimos el footer.php -->
         <?php include_once 'includes/templates/footer.php' ; ?>
         <?php $conn->close();?>
@@ -181,6 +213,6 @@
             ga('send', 'pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async></script>
-    </body>
+</body>
 
 </html>

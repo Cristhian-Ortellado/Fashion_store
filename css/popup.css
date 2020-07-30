@@ -37,6 +37,7 @@
       transform: rotate(90deg) translate(-150%, -230%);
       background-color: #fafafa;
       transition: all ease-in-out .6s;
+      overflow-y: auto;
   }
   
   .img-popup img {
@@ -51,7 +52,7 @@
       font-size: 1.4em;
       letter-spacing: px;
       font-family: 'Oswald', sans-serif;
-      font-weight: 600;
+      font-weight: 100;
       color: grey;
       margin: 0 auto;
   }
@@ -72,7 +73,7 @@
   
   .container-text {
       width: 50%;
-      overflow-y: auto;
+      /* overflow-y: auto; */
       margin-left: 3em;
       color: gray;
       text-align: justify;
@@ -86,10 +87,6 @@
       font-size: 1.5em;
       padding: 0;
       margin: 0;
-  }
-  
-  .container-text .precio span {
-      font-size: .7em;
   }
   
   .container-text h1 {
@@ -126,8 +123,8 @@
       width: auto;
       height: auto;
       position: absolute;
-      right: 0px;
-      top: 0px;
+      right: 5px;
+      top: 5px;
       border-radius: 50%;
       background-color: transparent;
   }
@@ -171,20 +168,37 @@
       box-shadow: 0px 4px 4px 1px rgba(196, 192, 196, 1);
   }
   
+  .tachado {
+      text-decoration: line-through;
+      padding-right: 1em!important;
+      font-size: 1em!important;
+  }
+  
+  div.contenedor-precio p {
+      display: inline;
+      margin-right: 2px;
+  }
+  
+  .container-text .precio span {
+      font-size: .7em;
+      text-decoration: none!important;
+  }
+  
   @media screen and (max-width:767px) {
       .popup {
           flex-direction: column;
-          width: 100%;
-          height: 100%;
+          width: 95%;
+          height: 98%;
           padding-bottom: 1em;
-          max-height: 900px;
+          max-height: 2000px;
+          border-radius: 10px;
       }
       .img-popup {
           padding: 0;
           margin: 0;
           width: 100%;
           height: auto;
-          overflow-y: auto;
+          /* overflow-y: auto; */
       }
       .img-popup img {
           width: 100%;
@@ -200,18 +214,28 @@
           font-size: 1em;
       }
       .popup h1 {
-          font-size: 2em;
-          margin: 5px 0 10px 0;
+          font-size: 1.8em;
+          margin: 5px 0 0px 0px;
           padding-top: 0;
+          font-weight: 100;
+          font-family: 'Oswald', sans-serif;
+          letter-spacing: 1px;
       }
       .redes {
           display: none!important;
       }
       p.precio {
-          font-size: 1.2em!important;
-          margin-bottom: 2px;
+          font-size: 1.5em!important;
+          margin-bottom: 10px!important;
+          font-weight: 100;
+          /* text-align: center; */
       }
       .ropa-detalles {
           margin: 0;
+      }
+      p.tachado {
+          text-decoration: line-through;
+          padding-right: .5em!important;
+          font-size: 1em!important;
       }
   }

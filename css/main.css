@@ -432,6 +432,9 @@ div.enlaces {
         position: relative;
         top: -25px;
     }
+    div.enlaces span {
+        padding-right: 7em;
+    }
     div.enlaces a {
         font-size: 1rem;
         text-decoration: none;
@@ -445,6 +448,12 @@ div.enlaces {
         font-family: 'Oswald', sans-serif;
         letter-spacing: 2px;
     }
+    div#card-4 {
+        display: none;
+    }
+    section.card-productos {
+        margin-bottom: 2em;
+    }
 }
 
 @media only screen and (min-width:992px) {
@@ -456,6 +465,10 @@ div.enlaces {
     }
     div.logo a h2 {
         font-size: 2.5rem;
+    }
+    div#card-4 {
+        display: inline;
+        text-align: center;
     }
 }
 
@@ -592,6 +605,10 @@ div.subtitulo h2 {
     height: 100%;
 }
 
+p.card-precio {
+    font-size: 1em;
+}
+
 div.card {
     background-color: var(--primario);
     display: inline-flex;
@@ -601,6 +618,19 @@ div.card {
     padding-bottom: .5em;
     border: none;
     transition: transform ease-in-out .2s;
+    position: relative;
+}
+
+p.porcentaje {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 3em;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(216, 114, 247, .8);
 }
 
 @media only screen and (max-width:767px) {
